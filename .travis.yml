@@ -1,0 +1,13 @@
+language: php
+
+php:
+  - 5.4
+
+script: phpunit --coverage-text
+
+notifications:
+  email:
+    recipients:
+      - wolters.fl@gmail.com
+    on_success: change
+    on_failure: always

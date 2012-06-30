@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ ! package.xml
+ !
+ ! PEAR package definition file.
+ !
+ ! This file is part of fwComponents.
+ !
+ ! fwComponents is free software: you can redistribute it and/or modify it under
+ ! the terms of the GNU Lesser General Public License as published by the Free
+ ! Software Foundation, either version 3 of the License, or (at your option) any
+ ! later version.
+ !
+ ! fwComponents is distributed in the hope that it will be useful, but WITHOUT
+ ! ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ ! FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for more
+ ! details.
+ !
+ ! You should have received a copy of the GNU Lesser General Public License
+ ! along with fwComponents.  If not, see http://gnu.org/licenses/lgpl.txt.
+ !
+ ! Author:    Florian Wolters <wolters.fl@gmail.com>
+ ! Copyright: 2012 Florian Wolters
+ ! License:   http://gnu.org/licenses/lgpl.txt LGPL-3.0+
+ ! Version:   GIT: $Id$
+ ! Link:      http://github.com/FlorianWolters/PHP-Component-Util-Singleton
+ !-->
+<package version="2.1"
+         xmlns="http://pear.php.net/dtd/package-2.1"
+         xmlns:tasks="http://pear.php.net/dtd/tasks-1.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+    http://pear.php.net/dtd/tasks-1.0.xsd
+    http://pear.php.net/dtd/package-2.1
+    http://pear.php.net/dtd/package-2.1.xsd">
+
+    <name>${project.name}</name>
+    <channel>${project.channel}</channel>
+    <summary>${project.summary}</summary>
+    <description>${project.description}
+    </description>
+
+    <lead>
+        <name>${project.author.name}</name>
+        <user>${project.author.user}</user>
+        <email>${project.author.email}</email>
+        <active>yes</active>
+    </lead>
+
+    <date>${build.date}</date>
+    <time>${build.time}</time>
+
+    <version>
+        <release>${project.version}</release>
+        <api>${project.majorVersion}.${project.minorVersion}</api>
+    </version>
+
+    <stability>
+        <release>${project.stability}</release>
+        <api>${project.apistability}</api>
+    </stability>
+
+    <license uri="${project.license.uri}">
+        ${project.license.name}
+    </license>
+
+    <notes>${project.notes}</notes>
+
+    <contents>
+        <dir baseinstalldir="/" name="/">
+${contents}</dir>
+    </contents>
+
+    <dependencies>
+        <required>
+
+            <php>
+                <min>5.4.0</min>
+                <max>5.4.99</max>
+            </php>
+
+            <pearinstaller>
+                <min>1.9.4</min>
+            </pearinstaller>
+
+        </required>
+    </dependencies>
+
+    <phprelease />
+
+</package>

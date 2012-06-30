@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ ! phpunit.xml
+ !
+ ! XML configuration file for "PHPUnit".
+ !
+ ! This XML configuration file can be used as a skeleton for any PHP project.
+ ! The options in this file are configured as "strict" as possible (e.g. error
+ ! reporting). Furthermore it uses all available logging tools (e.g.
+ ! PHP_CodeCoverage). The log files are created in the folder "review".
+ !
+ ! See http://phpunit.de/manual/3.6/en/appendixes.configuration.html for an
+ ! explanation of the XML configuration file.
+ !
+ ! This file is part of fwComponents.
+ !
+ ! fwComponents is free software: you can redistribute it and/or modify it under
+ ! the terms of the GNU Lesser General Public License as published by the Free
+ ! Software Foundation, either version 3 of the License, or (at your option) any
+ ! later version.
+ !
+ ! fwComponents is distributed in the hope that it will be useful, but WITHOUT
+ ! ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ ! FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for more
+ ! details.
+ !
+ ! You should have received a copy of the GNU Lesser General Public License
+ ! along with fwComponents.  If not, see http://gnu.org/licenses/lgpl.txt.
+ !
+ ! Author:    Florian Wolters <wolters.fl@gmail.com>
+ ! Copyright: 2012 Florian Wolters
+ ! License:   http://gnu.org/licenses/lgpl.txt LGPL-3.0+
+ ! Version:   GIT: $Id$
+ ! Link:      http://github.com/FlorianWolters/PHP-Component-Util-Singleton
+ !-->
+
+<!--
+ ! The attributes of the <phpunit> element can be used to configure PHPUnit's
+ ! core functionality.
+ !-->
+<phpunit backupGlobals="false"
+         backupStaticAttributes="false"
+         bootstrap="vendor/autoload.php"
+         cacheTokens="true"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         forceCoversAnnotation="true"
+         mapTestClassNameToCoveredClassName="true"
+         printerClass="PHPUnit_TextUI_ResultPrinter"
+         processIsolation="false"
+         stopOnError="false"
+         stopOnFailure="false"
+         stopOnIncomplete="false"
+         stopOnSkipped="false"
+         testSuiteLoaderClass="PHPUnit_Runner_StandardTestSuiteLoader"
+         strict="true"
+         verbose="false">
+
+    <!--
+     ! The <filter> element and its children can be used to configure the
+     ! blacklist and whitelist for the code coverage reporting.
+     !-->
+    <filter>
+        <blacklist>
+            <directory suffix=".php">vendor</directory>
+            <directory suffix=".php">src/tests</directory>
+        </blacklist>
+        <whitelist addUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">src/bin</directory>
+            <directory suffix=".php">src/php</directory>
+            <exclude>
+                <directory suffix="Exception.php">src/php</directory>
+                <directory suffix="Interface.php">src/php</directory>
+            </exclude>
+        </whitelist>
+    </filter>
+
+    <!--
+     ! The <logging> element and its <log> children can be used to configure the
+     ! logging of the test execution.
+     !-->
+    <logging>
+        <!--<log type="coverage-text" target="php://stdout" showUncoveredFiles="true" />-->
+        <log type="coverage-clover" target="review/phpcov/coverage.xml" />
+        <log type="coverage-html"
+             target="review/phpcov/coverage"
+             showUncoveredFiles="true"
+             charset="UTF-8"
+             yui="true"
+             highlight="true"
+             lowUpperBound="35"
+             highLowerBound="70" />
+        <log type="coverage-php"
+             target="review/phpcov/coverage.serialized"
+             showUncoveredFiles="true" />
+        <log type="coverage-text"
+             target="review/phpcov/coverage.txt"
+             showUncoveredFiles="true" />
+        <log type="json" target="review/phpunit/phpunit.json" />
+        <log type="junit"
+             target="review/phpunit/junit.xml"
+             logIncompleteSkipped="true" />
+        <log type="tap" target="review/phpunit/phpunit.tap" />
+        <log type="testdox-html" target="review/phpunit/testdox.html" />
+        <log type="testdox-text" target="review/phpunit/testdox.txt" />
+    </logging>
+
+    <!--
+     ! The <php> element and its children can be used to configure PHP settings,
+     ! constants, and global variables. It can also be used to prepend the
+     ! include_path.
+     ! -->
+    <php>
+        <ini name="error_reporting" value="-1" />
+        <ini name="display_errors" value="On" />
+        <ini name="display_startup_errors" value="On" />
+        <ini name="log_errors" value="On" />
+        <ini name="log_errors_max_len" value="0" />
+        <ini name="ignore_repeated_errors" value="Off" />
+        <ini name="ignore_repeated_source" value="Off" />
+        <ini name="report_memleaks" value="On" />
+        <ini name="track_errors" value="On" />
+        <ini name="html_errors" value="Off" />
+        <ini name="xmlrpc_errors" value="Off" />
+        <ini name="xmlrpc_error_number" value="Off" />
+        <ini name="docref_root" value=".php" />
+        <ini name="error_prepend_string" value="" />
+        <ini name="error_append_string" value="" />
+        <ini name="memory_limit" value="1024M" />
+    </php>
+
+</phpunit>

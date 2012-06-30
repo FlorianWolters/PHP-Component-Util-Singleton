@@ -1,0 +1,42 @@
+# Microsoft Windows
+
+# Image file cache
+Thumbs.db
+# Folder config file
+Desktop.ini
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Apple OS X
+
+# Finder
+.DS_Store
+# Thumbnail
+._*
+# Files used on external disks
+.Spotlight-V100
+.Trashes
+
+# KDE
+.directory
+
+# NetBeans IDE
+
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+nbactions.xml
+nb-configuration.xml
+
+# Phix
+
+.build/
+.tmp/
+review/
+vendor/
+
+# PHPUnit
+
+phpunit.xml
