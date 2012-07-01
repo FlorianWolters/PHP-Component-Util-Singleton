@@ -7,8 +7,6 @@ before_script:
   - curl -s http://getcomposer.org/installer | php
   - php composer.phar install
 
-script: phpunit
-
 notifications:
   email:
     recipients:
