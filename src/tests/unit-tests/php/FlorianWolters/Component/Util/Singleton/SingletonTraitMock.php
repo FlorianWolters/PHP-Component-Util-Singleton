@@ -73,12 +73,6 @@ class SingletonTraitMock
 
 }
 
-class AnotherSingletonTraitMock
+class AnotherSingletonTraitMock extends SingletonTraitMock
 {
-
-    /**
-     * This class implements the *Singleton* design pattern.
-     */
-    use SingletonTrait;
-
 }

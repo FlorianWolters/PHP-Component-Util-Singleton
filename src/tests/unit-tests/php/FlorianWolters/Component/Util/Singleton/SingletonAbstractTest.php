@@ -60,8 +60,9 @@ class SingletonAbstractTest extends SingletonTestAbstract
      */
     public static function setUpBeforeClass()
     {
-        self::$_classUnderTest = __NAMESPACE__ . '\SingletonAbstractMock';
-        self::$_anotherSingletonClass = __NAMESPACE__ . '\AnotherSingletonAbstractMock';
+        self::$singletonClass = __NAMESPACE__ . '\SingletonAbstractMock';
+        self::$anotherSingletonClass = __NAMESPACE__
+            . '\AnotherSingletonAbstractMock';
     }
 
 }

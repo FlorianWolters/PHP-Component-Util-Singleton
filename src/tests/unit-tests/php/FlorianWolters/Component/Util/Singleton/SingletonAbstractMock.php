@@ -68,6 +68,6 @@ class SingletonAbstractMock extends SingletonAbstract
 
 }
 
-class AnotherSingletonAbstractMock extends SingletonAbstract
+class AnotherSingletonAbstractMock extends SingletonAbstractMock
 {
 }

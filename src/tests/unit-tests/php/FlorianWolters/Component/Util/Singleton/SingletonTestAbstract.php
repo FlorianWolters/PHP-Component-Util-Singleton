@@ -53,21 +53,21 @@ abstract class SingletonTestAbstract extends \PHPUnit_Framework_TestCase
      *
      * @var string
      */
-    protected static $_classUnderTest;
+    protected static $singletonClass;
 
     /**
      * The qualified class name of another *Singleton* class.
      *
      * @var string
      */
-    protected static $_anotherSingletonClass;
+    protected static $anotherSingletonClass;
 
     /**
      * The mock object under test.
      *
      * @var SingletonTraitMock
      */
-    protected $_objUnderTest;
+    protected $objUnderTest;
 
     /**
      * Sets up the fixture.
@@ -75,8 +75,8 @@ abstract class SingletonTestAbstract extends \PHPUnit_Framework_TestCase
      * @return void
      */
     public function setUp() {
-        $className = self::$_classUnderTest;
-        $this->_objUnderTest = $className::getInstance('foo', 13, 'bar');
+        $className = self::$singletonClass;
+        $this->objUnderTest = $className::getInstance('foo', 13, 'bar');
     }
 
     /**
@@ -88,7 +88,7 @@ abstract class SingletonTestAbstract extends \PHPUnit_Framework_TestCase
      */
     public function testClassIsNotInstantiable()
     {
-        $reflectedClass = new \ReflectionClass($this->_objUnderTest);
+        $reflectedClass = new \ReflectionClass($this->objUnderTest);
         self::assertFalse($reflectedClass->isInstantiable());
     }
 
@@ -102,7 +102,7 @@ abstract class SingletonTestAbstract extends \PHPUnit_Framework_TestCase
     public function testObjectIsNotClonable()
     {
         $reflectedMethod = new \ReflectionMethod(
-            $this->_objUnderTest, '__clone'
+            $this->objUnderTest, '__clone'
         );
         self::assertTrue($reflectedMethod->isFinal());
         self::assertTrue($reflectedMethod->isPrivate());
@@ -118,7 +118,7 @@ abstract class SingletonTestAbstract extends \PHPUnit_Framework_TestCase
     public function testObjectIsNotSerializable()
     {
         $reflectedMethod = new \ReflectionMethod(
-            $this->_objUnderTest, '__wakeup'
+            $this->objUnderTest, '__wakeup'
         );
         self::assertTrue($reflectedMethod->isFinal());
         self::assertTrue($reflectedMethod->isPrivate());
@@ -134,8 +134,8 @@ abstract class SingletonTestAbstract extends \PHPUnit_Framework_TestCase
      */
     public function testGetInstanceReturnsSameObject()
     {
-        $className = self::$_classUnderTest;
-        self::assertEquals($this->_objUnderTest, $className::getInstance());
+        $className = self::$singletonClass;
+        $this->assertEquals($this->objUnderTest, $className::getInstance());
     }
 
     /**
@@ -149,19 +149,49 @@ abstract class SingletonTestAbstract extends \PHPUnit_Framework_TestCase
     public function testGetInstanceSupportsArguments()
     {
         $args = ['foo', 13, 'bar'];
-        self::assertEquals($args, $this->_objUnderTest->args);
+        $this->assertEquals($args, $this->objUnderTest->args);
     }
 
     /**
-     * Tests whether more than one class can be declared as a *Singleton*.
+     * Tests whether a *Singleton* class can be subclassed and whether more than
+     * one class can be declared as a *Singleton*.
      *
      * @return void
      *
      * @test
      */
-    public function testSupportsMultipleSingletonClasses() {
-        $className = self::$_anotherSingletonClass;
-        self::assertNotEquals($className::getInstance(), $this->_objUnderTest);
+    public function testSupportsInheritanceAndMultipleDeclaration() {
+        $className = self::$anotherSingletonClass;
+        $this->assertNotEquals($className::getInstance(), $this->objUnderTest);
+    }
+
+    /**
+     * Tests whether the object type of a *Singleton* superclass is actually the
+     * superclass type.
+     *
+     * @return void
+     *
+     * @test
+     */
+    public function testInstanceOfSingletonSuperclass()
+    {
+        $this->assertInstanceOf(self::$singletonClass, $this->objUnderTest);
+    }
+
+    /**
+     * Tests whether the object type of a *Singleton* subclass is actually the
+     * subclass type.
+     *
+     * @return void
+     *
+     * @test
+     */
+    public function testInstanceOfSingletonSubclass()
+    {
+        $className = self::$anotherSingletonClass;
+        $this->assertInstanceOf(
+            self::$anotherSingletonClass, $className::getInstance()
+        );
     }
 
 }
