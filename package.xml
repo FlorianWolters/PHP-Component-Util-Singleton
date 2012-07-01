@@ -37,8 +37,7 @@
     <name>${project.name}</name>
     <channel>${project.channel}</channel>
     <summary>${project.summary}</summary>
-    <description>${project.description}
-    </description>
+    <description>${project.description}</description>
 
     <lead>
         <name>${project.author.name}</name>
@@ -60,9 +59,7 @@
         <api>${project.apistability}</api>
     </stability>
 
-    <license uri="${project.license.uri}">
-        ${project.license.name}
-    </license>
+    <license uri="${project.license.uri}">${project.license.name}</license>
 
     <notes>${project.notes}</notes>
 
