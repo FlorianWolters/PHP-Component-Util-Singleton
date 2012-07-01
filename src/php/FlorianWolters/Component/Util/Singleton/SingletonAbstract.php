@@ -51,33 +51,34 @@ abstract class SingletonAbstract implements SingletonInterface
 {
 
     /**
-     * The *Singleton* instances of the subclasses.
-     *
-     * This attribute has to be an array because it is shared across all
-     * subclasses. Without an array, the first time a *Singleton* is created and
-     * stored in this property, all other calls to {@link getInstance} would
-     * return the same object, no matter what subclass is used.
-     *
-     * @var array
-     */
-    private static $_instances = [];
-
-    /**
      * Returns the *Singleton* instance of this class.
      *
      * @return object The *Singleton* instance.
      */
     final public static function getInstance()
     {
+        /*
+         * The *Singleton* instances of the subclasses.
+         *
+         * This attribute has to be an array because it is shared across all
+         * subclasses. Without an array, the first time a *Singleton* is created
+         * and stored in this property, all other calls to {@link getInstance}
+         * would return the same object, no matter what subclass is used.
+         */
+        static $instances = [];
+        // Get the name of the calling class. The calling class is the concrete
+        // class extending this class.
         $className = \get_called_class();
 
-        if ( false === isset(self::$_instances[$className]) ) {
+        if (false === isset($instances[$className])) {
             $arguments = \func_get_args();
-            self::$_instances[$className] = new $className($arguments);
+            $instances[$className] = new $className($arguments);
         }
 
-        return self::$_instances[$className];
+        return $instances[$className];
     }
+
+    // @codeCoverageIgnoreStart
 
     /**
      * Protected constructor that prevents creating a new instance of this
@@ -94,9 +95,7 @@ abstract class SingletonAbstract implements SingletonInterface
      */
     final private function __clone()
     {
-        // @codeCoverageIgnoreStart
     }
-    // @codeCoverageIgnoreEnd
 
     /**
      * Private unserialize method that prevents unserializing of this
@@ -106,8 +105,8 @@ abstract class SingletonAbstract implements SingletonInterface
      */
     final private function __wakeup()
     {
-        // @codeCoverageIgnoreStart
     }
+
     // @codeCoverageIgnoreEnd
 
 }
