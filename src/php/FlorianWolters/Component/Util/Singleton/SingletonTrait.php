@@ -51,26 +51,24 @@ trait SingletonTrait
 {
 
     /**
-     * The *Singleton* instance of the class using this trait.
-     *
-     * @var object
-     */
-    private static $_instance = null;
-
-    /**
      * Returns the *Singleton* instance of the class using this trait.
      *
      * @return object The *Singleton* instance.
      */
     final public static function getInstance()
     {
-        if (null === self::$_instance) {
+        // The *Singleton* instance of the class using this trait.
+        static $instance = null;
+
+        if (null === $instance) {
             $arguments = \func_get_args();
-            self::$_instance = new self($arguments);
+            $instance = new static($arguments);
         }
 
-        return self::$_instance;
+        return $instance;
     }
+
+    // @codeCoverageIgnoreStart
 
     /**
      * Protected constructor that prevents creating a new instance of this
@@ -87,9 +85,7 @@ trait SingletonTrait
      */
     final private function __clone()
     {
-        // @codeCoverageIgnoreStart
     }
-    // @codeCoverageIgnoreEnd
 
     /**
      * Private unserialize method that prevents unserializing of the
@@ -99,8 +95,8 @@ trait SingletonTrait
      */
     final private function __wakeup()
     {
-        // @codeCoverageIgnoreStart
     }
+
     // @codeCoverageIgnoreEnd
 
 }
