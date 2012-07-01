@@ -18,19 +18,14 @@ It is suggested to use the trait `SingletonTrait` and not the abstract class `Si
 * Allows to pass arguments to the static method `getInstance()` (and therefore to the `protected` constructor of the class). Because of that, the arguments should be validated within the constructor `__construct()`.
 * Allows a number of unlimited classes to use the trait `SingletonTrait`.
   * **Benefit:** A class which uses the `SingletonTrait` can still inherit from another class.
-  * **Downside:** You may not declare another `private` attribute with the name `_instance` in the class using the trait.
-
 * Allows a number of unlimited classes to subclass the abstract class `SingletonAbstract`. Each class which inherits from `SingletonAbstract` is a *Singleton*. This is realized via *late static binding*.
-  * **Benefit:** You may declare another `private` attribute with the name `_instance` in the class inheriting from the abstract class.
   * **Downside:** A class which inherits from `SingletonAbstract` can not inherit from another class, since PHP does not allow multiple inheritance.
-
 * Allows to use the *Dependency Injection* architectural pattern. This can be achieved by using *Interface Injection* with the interface `SingletonInterface`.
   **NOTE:** This is a weak point since only a class is a *Singleton* does not mean it provides the same functionality as other *Singleton* classes. But there may be a use case where this can be useful and the interface does not hurt.
 
 * Artifacts tested with both static and dynamic test procedures:
   * Component tests (unit tests) implemented with [PHPUnit][19].
   * Static code analysis with the style checker [PHP_CodeSniffer][14] and the source code analyzer [PHP Mess Detector (PHPMD)][18], [phpcpd][4] and [phpdcd][5].
-
 * Provides support for the dependency manager [Composer][3].
 * Provides a [PEAR package][13] which can be installed using the [PEAR installer][11]. Click [here][9] for the [PEAR channel][12].
 * Provides a complete Application Programming Interface (API) documentation generated with the documentation generator [ApiGen][2]. Click [here][1] for the online API documentation.
@@ -47,8 +42,8 @@ It is suggested to use the trait `SingletonTrait` and not the abstract class `Si
 
 **FlorianWolters\Component\Util\Singleton** should be installed using the [PEAR installer][11]. This installer is the [PHP][17] community's de-facto standard for installing [PHP][17] components.
 
-	pear channel-discover pear.florianwolters.de
-	pear install --alldeps fw/Singleton
+    pear channel-discover pear.florianwolters.de
+    pear install --alldeps fw/Singleton
 
 ## As A Dependency On Your Component
 
@@ -75,19 +70,19 @@ The best documentation for **FlorianWolters\Component\Util\Singleton** are the u
 
 If you want to patch or enhance this component, you will need to create a suitable development environment. The easiest way to do that is to install [phix4componentdev][16]:
 
-	# phix4componentdev
-	pear channel-discover pear.phix-project.org
-	pear install phix/phix4componentdev
+    # phix4componentdev
+    pear channel-discover pear.phix-project.org
+    pear install phix/phix4componentdev
 
 You can then clone the Git repository:
 
-	# PHP-Component-Util-Singleton
-	git clone http://github.com/FlorianWolters/PHP-Component-Util-Singleton
+    # PHP-Component-Util-Singleton
+    git clone http://github.com/FlorianWolters/PHP-Component-Util-Singleton
 
 Then, install a local copy of this component's dependencies to complete the development environment:
 
-	# build vendor/ folder
-	phing build-vendor
+    # build vendor/ folder
+    phing build-vendor
 
 To make life easier for you, common tasks (such as running unit tests, generating code review analytics, and creating the [PEAR package][13]) have been automated using [phing][15]. You'll find the automated steps inside the `build.xml` file that ships with the component.
 

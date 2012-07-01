@@ -85,4 +85,20 @@ ${contents}</dir>
 
     <phprelease />
 
+    <changelog>
+        <release>
+            <version>
+                <release>0.1.0</release>
+                <api>0.1</api>
+            </version>
+            <stability>
+                <release>stable</release>
+                <api>beta</api>
+            </stability>
+            <date>2012-06-30</date>
+            <license uri="http://gnu.org/licenses/lgpl.txt">LGPL-3.0+</license>
+            <notes>Initial release.</notes>
+        </release>
+    </changelog>
+
 </package>
