@@ -2,7 +2,7 @@
     "name": "florianwolters/component-util-singleton",
     "description": "The Singleton design pattern as a simple-to-use PHP component.",
     "type": "library",
-    "keywords": ["pattern", "utility"],
+    "keywords": ["singleton", "pattern", "utility"],
     "homepage": "http://github.com/FlorianWolters/PHP-Component-Util-Singleton",
     "license": "LGPL-3.0+",
     "authors": [
