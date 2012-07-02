@@ -29,8 +29,6 @@
  * @since     File available since Release 0.1.0
  */
 
-declare(encoding = 'UTF-8');
-
 namespace FlorianWolters\Component\Util\Singleton;
 
 /**
