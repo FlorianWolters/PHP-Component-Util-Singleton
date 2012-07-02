@@ -4,6 +4,10 @@
 
 **FlorianWolters\Component\Util\Singleton** is a simple-to-use [PHP][17] component that provides the *Singleton* design pattern as an [interface][22], an [abstract class][21] and a [trait][23].
 
+Although the current version tag is *0.2.1-stable*, this component can be considered as stable. (Hint: The component has a code coverage via unit tests of 100%.)
+
+## Introduction
+
 *Singleton* is a *creational* design pattern and defined as follows:
 
 > "Ensure a class only has once instance, and provide a global access point to it."
@@ -38,7 +42,21 @@ It is suggested to use the trait `SingletonTrait` and not the abstract class `Si
 
 * [PHP][17] 5.4.0 (or later)
 
-## System-Wide Installation
+## Installation
+
+### Local Installation
+
+**FlorianWolters\Component\Core\Enum** should be installed using the dependency manager [Composer][3]. [Composer][1] can be installed with [PHP][6].
+
+    php -r "eval('?>'.file_get_contents('http://getcomposer.org/installer'));"
+
+> This will just check a few [PHP][17] settings and then download `composer.phar` to your working directory. This file is the [Composer][1] binary. It is a PHAR ([PHP][17] archive), which is an archive format for [PHP][17] which can be run on the command line, amongst other things.
+>
+> Next, run the `install` command to resolve and download dependencies:
+
+    php composer.phar install
+
+### System-Wide Installation
 
 **FlorianWolters\Component\Util\Singleton** should be installed using the [PEAR installer][11]. This installer is the [PHP][17] community's de-facto standard for installing [PHP][17] components.
 
@@ -55,8 +73,8 @@ If you are creating a component that relies on **FlorianWolters\Component\Util\S
     <package>
       <name>Singleton</name>
       <channel>pear.florianwolters.de</channel>
-      <min>0.1.0</min>
-      <max>0.1.99</max>
+      <min>0.2.1</min>
+      <max>0.2.99</max>
     </package>
   </required>
 </dependencies>
