@@ -59,6 +59,16 @@
          verbose="false">
 
     <!--
+     ! The <testsuites> element and its one or more <testsuite> children can be
+     ! used to compose a test suite out of test suites and test cases.
+     !-->
+    <testsuites>
+        <testsuite>
+            <directory>src/tests/unit-tests/php</directory>
+        </testsuite>
+    </testsuites>
+
+    <!--
      ! The <filter> element and its children can be used to configure the
      ! blacklist and whitelist for the code coverage reporting.
      !-->
@@ -71,6 +81,7 @@
             <directory suffix=".php">src/bin</directory>
             <directory suffix=".php">src/php</directory>
             <exclude>
+                <directory suffix="Enum.php">src/php</directory>
                 <directory suffix="Exception.php">src/php</directory>
                 <directory suffix="Interface.php">src/php</directory>
             </exclude>
