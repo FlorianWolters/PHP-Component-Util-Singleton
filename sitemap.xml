@@ -3,15 +3,27 @@
 <url>
 	<loc>http://florianwolters.github.com/PHP-Component-Util-Singleton/index.html</loc>
 </url>
+<url>
+	<loc>http://florianwolters.github.com/PHP-Component-Util-Singleton/namespace-FlorianWolters.html</loc>
+</url>
+<url>
+	<loc>http://florianwolters.github.com/PHP-Component-Util-Singleton/namespace-FlorianWolters.Component.html</loc>
+</url>
+<url>
+	<loc>http://florianwolters.github.com/PHP-Component-Util-Singleton/namespace-FlorianWolters.Component.Util.html</loc>
+</url>
+<url>
+	<loc>http://florianwolters.github.com/PHP-Component-Util-Singleton/namespace-FlorianWolters.Component.Util.Singleton.html</loc>
+</url>
 
 
 <url>
-	<loc>http://florianwolters.github.com/PHP-Component-Util-Singleton/class-SingletonAbstract.html</loc>
+	<loc>http://florianwolters.github.com/PHP-Component-Util-Singleton/class-FlorianWolters.Component.Util.Singleton.SingletonAbstract.html</loc>
 </url>
 <url>
-	<loc>http://florianwolters.github.com/PHP-Component-Util-Singleton/class-SingletonInterface.html</loc>
+	<loc>http://florianwolters.github.com/PHP-Component-Util-Singleton/class-FlorianWolters.Component.Util.Singleton.SingletonInterface.html</loc>
 </url>
 <url>
-	<loc>http://florianwolters.github.com/PHP-Component-Util-Singleton/class-SingletonTrait.html</loc>
+	<loc>http://florianwolters.github.com/PHP-Component-Util-Singleton/class-FlorianWolters.Component.Util.Singleton.SingletonTrait.html</loc>
 </url>
 </urlset>
