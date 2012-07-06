@@ -32,7 +32,7 @@
 namespace FlorianWolters\Component\Util\Singleton;
 
 /**
- * Mock class for `{@link SingletonAbstractTest}`.
+ * Mock class for {@link SingletonAbstractTest}.
  *
  * @category  Component
  * @package   Util

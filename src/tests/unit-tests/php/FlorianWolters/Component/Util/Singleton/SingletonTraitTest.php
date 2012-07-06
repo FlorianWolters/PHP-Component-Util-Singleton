@@ -32,7 +32,7 @@
 namespace FlorianWolters\Component\Util\Singleton;
 
 /**
- * Test class for `{@link SingletonTrait}`.
+ * Test class for {@link SingletonTrait}.
  *
  * @category  Component
  * @package   Util
