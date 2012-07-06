@@ -4,7 +4,7 @@
 
 **FlorianWolters\Component\Util\Singleton** is a simple-to-use [PHP][17] component that provides the *Singleton* design pattern as an [interface][22], an [abstract class][21] and a [trait][23].
 
-Although the current version tag is *0.2.1-stable*, this component can be considered as stable. (Hint: The component has a code coverage via unit tests of 100%.)
+Although the current version tag is *0.2.1*, this component can be considered as stable. (Hint: The component has a code coverage via unit tests of 100%.)
 
 ## Introduction
 
@@ -46,7 +46,7 @@ It is suggested to use the trait `SingletonTrait` and not the abstract class `Si
 
 ### Local Installation
 
-**FlorianWolters\Component\Core\Enum** should be installed using the dependency manager [Composer][3]. [Composer][1] can be installed with [PHP][6].
+**FlorianWolters\Component\Util\Singleton** should be installed using the dependency manager [Composer][3]. [Composer][1] can be installed with [PHP][6].
 
     php -r "eval('?>'.file_get_contents('http://getcomposer.org/installer'));"
 
