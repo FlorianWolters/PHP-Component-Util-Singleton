@@ -46,11 +46,11 @@ It is suggested to use the trait `SingletonTrait` and not the abstract class `Si
 
 ### Local Installation
 
-**FlorianWolters\Component\Util\Singleton** should be installed using the dependency manager [Composer][3]. [Composer][1] can be installed with [PHP][6].
+**FlorianWolters\Component\Util\Singleton** should be installed using the dependency manager [Composer][3]. [Composer][3] can be installed with [PHP][6].
 
     php -r "eval('?>'.file_get_contents('http://getcomposer.org/installer'));"
 
-> This will just check a few [PHP][17] settings and then download `composer.phar` to your working directory. This file is the [Composer][1] binary. It is a PHAR ([PHP][17] archive), which is an archive format for [PHP][17] which can be run on the command line, amongst other things.
+> This will just check a few [PHP][17] settings and then download `composer.phar` to your working directory. This file is the [Composer][3] binary. It is a PHAR ([PHP][17] archive), which is an archive format for [PHP][17] which can be run on the command line, amongst other things.
 >
 > Next, run the `install` command to resolve and download dependencies:
 
@@ -129,7 +129,7 @@ You should have received a copy of the GNU Lesser General Public License along w
 [13]: http://pear.php.net/manual/en/guide.users.concepts.package.php
 [14]: http://pear.php.net/package/PHP_CodeSniffer
 [15]: http://phing.info
-[16]: http://phix-project.org
+[16]: https://github.com/stuartherbert/phix4componentdev
 [17]: http://php.net
 [18]: http://phpmd.org
 [19]: http://phpunit.de
