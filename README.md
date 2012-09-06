@@ -4,7 +4,7 @@
 
 **FlorianWolters\Component\Util\Singleton** is a simple-to-use [PHP][17] component that provides the *Singleton* design pattern as an [interface][22], an [abstract class][21] and a [trait][23].
 
-Although the current version tag is *0.2.1*, this component can be considered as stable. (Hint: The component has a code coverage via unit tests of 100%.)
+Although the current version tag is *0.2.2*, this component can be considered as stable. (Hint: The component has a code coverage via unit tests of 100%.)
 
 ## Introduction
 
@@ -21,26 +21,34 @@ It is suggested to use the trait `SingletonTrait` and not the abstract class `Si
 * Follows the naming conventions for the *Singleton* design pattern (e.g. offers a static method `getInstance()`).
 * Allows to pass arguments to the static method `getInstance()` (and therefore to the `protected` constructor of the class). Because of that, the arguments should be validated within the constructor `__construct()`.
 * Allows a number of unlimited classes to use the trait `SingletonTrait`.
-  * **Benefit:** A class which uses the `SingletonTrait` can still inherit from another class.
+    * **Benefit:** A class which uses the `SingletonTrait` can still inherit from another class.
 * Allows a number of unlimited classes to subclass the abstract class `SingletonAbstract`. Each class which inherits from `SingletonAbstract` is a *Singleton*. This is realized via *late static binding*.
-  * **Downside:** A class which inherits from `SingletonAbstract` can not inherit from another class, since PHP does not allow multiple inheritance.
+    * **Downside:** A class which inherits from `SingletonAbstract` can not inherit from another class, since PHP does not allow multiple inheritance.
 * Allows to use the *Dependency Injection* architectural pattern. This can be achieved by using *Interface Injection* with the interface `SingletonInterface`.
-  **NOTE:** This is a weak point since only a class is a *Singleton* does not mean it provides the same functionality as other *Singleton* classes. But there may be a use case where this can be useful and the interface does not hurt.
-
+    * **NOTE:** This is a weak point since only a class is a *Singleton* does not mean it provides the same functionality as other *Singleton* classes.
 * Artifacts tested with both static and dynamic test procedures:
-  * Component tests (unit tests) implemented with [PHPUnit][19].
-  * Static code analysis with the style checker [PHP_CodeSniffer][14] and the source code analyzer [PHP Mess Detector (PHPMD)][18], [phpcpd][4] and [phpdcd][5].
-* Provides support for the dependency manager [Composer][3].
-* Provides a [PEAR package][13] which can be installed using the [PEAR installer][11]. Click [here][9] for the [PEAR channel][12].
-* Provides a complete Application Programming Interface (API) documentation generated with the documentation generator [ApiGen][2]. Click [here][1] for the online API documentation.
+    * Dynamic component tests (unit tests) implemented using [PHPUnit][19].
+    * Static code analysis performed using the following tools:
+        * [PHP_CodeSniffer][14]: Style Checker
+        * [PHP Mess Detector (PHPMD)][18]: Code Analyzer
+        * [phpcpd][4]: Copy/Paste Detector (CPD)
+        * [phpdcd][5]: Dead Code Detector (DCD)
+* Installable via [Composer][3] or [PEAR installer][11]:
+    * Provides a [Packagist][25] package which can be installed using the dependency manager [Composer][3].
+        * Click [here][24] for the package on [Packagist][25].
+    * Provides a [PEAR package][13] which can be installed using the package manager [PEAR installer][11].
+        * Click [here][9] for the [PEAR channel][12].
+* Provides a complete Application Programming Interface (API) documentation generated with the documentation generator [ApiGen][2].
+    * Click [here][1] for the current API documentation.
 * Follows the [PSR-0][6] requirements for autoloader interoperability.
 * Follows the [PSR-1][7] basic coding style guide.
 * Follows the [PSR-2][8] coding style guide.
-* Follows the [Semantic Versioning][20] requirements for versioning (`<Major version>.<Minor version>.<Patch level>`).
+* Follows the [Semantic Versioning][20] Specification (SemVer) 2.0.0-rc.1.
 
 ## Requirements
 
-* [PHP][17] 5.4.0 (or later)
+* [PHP][17] >= 5.3.0
+* [PHP][17] >= 5.4.0 to use the trait `SingletonTrait`
 
 ## Installation
 
@@ -65,6 +73,20 @@ It is suggested to use the trait `SingletonTrait` and not the abstract class `Si
 
 ## As A Dependency On Your Component
 
+### Composer
+
+If you are creating a component that relies on **FlorianWolters\Component\Util\Singleton**, please make sure that you add **FlorianWolters\Component\Util\Singleton** to your component's `composer.json` file:
+
+```json
+{
+    "require": {
+        "florianwolters/component-util-singleton": "0.2.*"
+    }
+}
+```
+
+### PEAR
+
 If you are creating a component that relies on **FlorianWolters\Component\Util\Singleton**, please make sure that you add **FlorianWolters\Component\Util\Singleton** to your component's `package.xml` file:
 
 ```xml
@@ -73,7 +95,7 @@ If you are creating a component that relies on **FlorianWolters\Component\Util\S
     <package>
       <name>Singleton</name>
       <channel>pear.florianwolters.de</channel>
-      <min>0.2.1</min>
+      <min>0.2.2</min>
       <max>0.2.99</max>
     </package>
   </required>
@@ -112,7 +134,7 @@ This program is free software: you can redistribute it and/or modify it under th
 
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for more details.
 
-You should have received a copy of the GNU Lesser General Public License along with this program. If not, see http://gnu.org/licenses/lgpl.txt.
+You should have received a copy of the GNU Lesser General Public License along with this program. If not, see <http://gnu.org/licenses/lgpl.txt>.
 
 [1]: http://blog.florianwolters.de/PHP-Component-Util-Singleton
 [2]: http://apigen.org
@@ -137,3 +159,5 @@ You should have received a copy of the GNU Lesser General Public License along w
 [21]: http://php.net/language.oop5.abstract
 [22]: http://php.net/language.oop5.interfaces
 [23]: http://php.net/language.oop5.traits
+[24]: http://packagist.org/packages/florianwolters/component-util-singleton
+[25]: http://packagist.org
