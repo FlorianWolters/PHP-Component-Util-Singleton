@@ -1,6 +1,6 @@
 
 var ApiGen = ApiGen || {};
-ApiGen.config = {"resources":{"resources":"resources"},"templates":{"common":{"overview.latte":"index.html","combined.js.latte":"resources\/combined.js","elementlist.js.latte":"elementlist.js"},"optional":{"sitemap":{"filename":"sitemap.xml","template":"sitemap.xml.latte"},"opensearch":{"filename":"opensearch.xml","template":"opensearch.xml.latte"},"robots":{"filename":"robots.txt","template":"robots.txt.latte"}},"main":{"package":{"filename":"package-%s.html","template":"package.latte"},"namespace":{"filename":"namespace-%s.html","template":"namespace.latte"},"class":{"filename":"class-%s.html","template":"class.latte"},"constant":{"filename":"constant-%s.html","template":"constant.latte"},"function":{"filename":"function-%s.html","template":"function.latte"},"source":{"filename":"source-%s.html","template":"source.latte"},"tree":{"filename":"tree.html","template":"tree.latte"},"deprecated":{"filename":"deprecated.html","template":"deprecated.latte"},"todo":{"filename":"todo.html","template":"todo.latte"}}},"options":{"elementDetailsCollapsed":true,"elementsOrder":"natural"}};
+ApiGen.config = {"resources":{"resources":"resources"},"templates":{"common":{"overview.latte":"index.html","combined.js.latte":"resources\/combined.js","elementlist.js.latte":"elementlist.js"},"optional":{"sitemap":{"filename":"sitemap.xml","template":"sitemap.xml.latte"},"opensearch":{"filename":"opensearch.xml","template":"opensearch.xml.latte"},"robots":{"filename":"robots.txt","template":"robots.txt.latte"}},"main":{"package":{"filename":"package-%s.html","template":"package.latte"},"namespace":{"filename":"namespace-%s.html","template":"namespace.latte"},"class":{"filename":"class-%s.html","template":"class.latte"},"constant":{"filename":"constant-%s.html","template":"constant.latte"},"function":{"filename":"function-%s.html","template":"function.latte"},"source":{"filename":"source-%s.html","template":"source.latte"},"tree":{"filename":"tree.html","template":"tree.latte"},"deprecated":{"filename":"deprecated.html","template":"deprecated.latte"},"todo":{"filename":"todo.html","template":"todo.latte"}}},"options":{"elementDetailsCollapsed":true,"elementsOrder":"natural"},"config":"C:\\PHP\\PEAR\\data\\ApiGen\\templates\\default\\config.neon"};
 
 
 /*! jQuery v1.7 jquery.com | jquery.org/license */
@@ -141,6 +141,8 @@ $.fn.extend({
 
 		// if the formatMatch option is not specified, then use formatItem for backwards compatibility
 		options.formatMatch = options.formatMatch || options.formatItem;
+
+		options.show = options.show || function(list) {};
 
 		return this.each(function() {
 			new $.Autocompleter(this, options);
@@ -828,6 +830,7 @@ $.Autocompleter.Select = function (options, input, select, config) {
 				top: offset.top + input.offsetHeight,
 				left: offset.left
 			}).show();
+			options.show(element);
 			if(options.scroll) {
 				list.scrollTop(0);
 				list.css({
@@ -978,7 +981,7 @@ jQuery.fn.sortElements = (function(){
 
 })();
 /*!
- * ApiGen 2.6.1 - API documentation generator for PHP 5.3+
+ * ApiGen 2.7.0 - API documentation generator for PHP 5.3+
  *
  * Copyright (c) 2010-2011 David Grudl (http://davidgrudl.com)
  * Copyright (c) 2011-2012 Jaroslav Hanslík (https://github.com/kukulich)
@@ -1033,13 +1036,23 @@ $(function() {
 			scrollHeight: 200,
 			max: 20,
 			formatItem: function(data) {
-				return data[1].replace(/^(.+\\)(.+)$/, '<small>$1</small>$2');
+				return data[1].replace(/^(.+\\)(.+)$/, '<span><small>$1</small>$2</span>');
 			},
 			formatMatch: function(data) {
 				return data[1];
 			},
 			formatResult: function(data) {
 				return data[1];
+			},
+			show: function($list) {
+				var $items = $('li span', $list);
+				var maxWidth = Math.max.apply(null, $items.map(function() {
+					return $(this).width();
+				}));
+				// 10px padding
+				$list
+					.width(Math.max(maxWidth + 10, $search.innerWidth()))
+					.css('left', $search.offset().left + $search.outerWidth() - $list.outerWidth());
 			}
 		}).result(function(event, data) {
 			autocompleteFound = true;
