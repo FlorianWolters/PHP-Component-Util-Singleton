@@ -2,7 +2,7 @@
 namespace FlorianWolters\Component\Util\Singleton;
 
 /**
- * A mock class for {@link SingletonAbstractTest}.
+ * Another mock class for {@link SingletonAbstractTest}.
  *
  * @author    Florian Wolters <wolters.fl@gmail.com>
  * @copyright 2012 Florian Wolters
@@ -12,22 +12,6 @@ namespace FlorianWolters\Component\Util\Singleton;
  * @see       SingletonAbstractTest
  * @since     Class available since Release 0.1.0
  */
-class SingletonAbstractMock extends SingletonAbstract
+class AnotherSingletonAbstractMock extends SingletonAbstractMock
 {
-    /**
-     * The arguments passed to the constructor.
-     *
-     * @var array
-     */
-    public $args;
-
-    /**
-     * The protected constructor.
-     *
-     * @param array $args The arguments.
-     */
-    protected function __construct(array $args = array())
-    {
-        $this->args = $args;
-    }
 }
