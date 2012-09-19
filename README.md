@@ -4,7 +4,7 @@
 
 **FlorianWolters\Component\Util\Singleton** is a simple-to-use [PHP][17] component that provides the *Singleton* design pattern as an [interface][22], an [abstract class][21] and a [trait][23].
 
-Although the current version tag is *0.2.2*, this component can be considered as stable. (Hint: The component has a code coverage via unit tests of 100%.)
+The current version is *0.2.2-stable*, which means the API may change until version *1.0.0-stable*.
 
 ## Introduction
 
