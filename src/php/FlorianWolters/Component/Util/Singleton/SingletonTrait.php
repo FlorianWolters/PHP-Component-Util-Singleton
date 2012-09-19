@@ -9,7 +9,6 @@ namespace FlorianWolters\Component\Util\Singleton;
  * @author    Florian Wolters <wolters.fl@gmail.com>
  * @copyright 2012 Florian Wolters
  * @license   http://gnu.org/licenses/lgpl.txt LGPL-3.0+
- * @version   Release: @package_version@
  * @link      http://github.com/FlorianWolters/PHP-Component-Util-Singleton
  * @since     Trait available since Release 0.1.0
  */
@@ -22,9 +21,17 @@ trait SingletonTrait
      */
     final public static function getInstance()
     {
-        // The *Singleton* instances of the classes using this trait.
+        // The instances of the classes using this trait.
+        //
+        // This attribute has to be an array because it is shared across all
+        // classes using this trait. Without an array, the first time an
+        // instance is created and stored in this variable, all other calls
+        // to the method getInstance() would return the same instance, no matter
+        // what class is invoked.
         static $instances = [];
 
+        // Get the name of the calling class. The calling class is the concrete
+        // class using this trait.
         $className = \get_called_class();
 
         if (false === isset($instances[$className])) {
@@ -38,7 +45,7 @@ trait SingletonTrait
     // @codeCoverageIgnoreStart
 
     /**
-     * Protected constructor that prevents creating a new instance of this
+     * Protected constructor to prevent creating a new instance of the
      * *Singleton* via the `new` operator.
      */
     protected function __construct()
@@ -46,7 +53,8 @@ trait SingletonTrait
     }
 
     /**
-     * Private clone method that prevents cloning of the *Singleton*.
+     * Private clone method to prevent cloning of the instance of the
+     * *Singleton* instance.
      *
      * @return void
      */
@@ -55,8 +63,8 @@ trait SingletonTrait
     }
 
     /**
-     * Private unserialize method that prevents unserializing of the
-     * *Singleton*.
+     * Private unserialize method to prevent unserializing of the *Singleton*
+     * instance.
      *
      * @return void
      */

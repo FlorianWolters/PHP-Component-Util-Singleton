@@ -2,14 +2,13 @@
 namespace FlorianWolters\Component\Util\Singleton;
 
 /**
- * The {@link SingletonAbstract} class implements the *Singleton* creational
- * design pattern to ensure a class only has one instance, and to provide a
- * global point of access to it.
+ * The abstract class {@link SingletonAbstract} implements the *Singleton*
+ * creational design pattern to ensure a class only has one instance, and to
+ * provide a global point of access to it.
  *
  * @author    Florian Wolters <wolters.fl@gmail.com>
  * @copyright 2011-2012 Florian Wolters
  * @license   http://gnu.org/licenses/lgpl.txt LGPL-3.0+
- * @version   Release: @package_version@
  * @link      http://github.com/FlorianWolters/PHP-Component-Util-Singleton
  * @since     Class available since Release 0.1.0
  */
@@ -22,15 +21,15 @@ abstract class SingletonAbstract implements SingletonInterface
      */
     final public static function getInstance()
     {
-        /*
-         * The *Singleton* instances of the subclasses.
-         *
-         * This attribute has to be an array because it is shared across all
-         * subclasses. Without an array, the first time a *Singleton* is created
-         * and stored in this property, all other calls to {@link getInstance}
-         * would return the same object, no matter what subclass is used.
-         */
-        static $instances = [];
+        // The instances of the subclasses.
+        //
+        // This attribute has to be an array because it is shared across all
+        // subclasses. Without an array, the first time an instance is created
+        // and stored in this variable, all other calls to the method
+        // getInstance() would return the same object, no matter what class is
+        // invoked.
+        static $instances = array();
+
         // Get the name of the calling class. The calling class is the concrete
         // class extending this class.
         $className = \get_called_class();
@@ -46,7 +45,7 @@ abstract class SingletonAbstract implements SingletonInterface
     // @codeCoverageIgnoreStart
 
     /**
-     * Protected constructor that prevents creating a new instance of this
+     * Protected constructor to prevent creating a new instance of the
      * *Singleton* via the `new` operator.
      */
     protected function __construct()
@@ -54,7 +53,8 @@ abstract class SingletonAbstract implements SingletonInterface
     }
 
     /**
-     * Private clone method that prevents cloning of this *Singleton*.
+     * Private clone method to prevent cloning of the instance of the
+     * *Singleton* instance.
      *
      * @return void
      */
@@ -63,8 +63,8 @@ abstract class SingletonAbstract implements SingletonInterface
     }
 
     /**
-     * Private unserialize method that prevents unserializing of this
-     * *Singleton*.
+     * Private unserialize method to prevent unserializing of the *Singleton*
+     * instance.
      *
      * @return void
      */
