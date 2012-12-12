@@ -15,7 +15,7 @@
  ! details.
  !
  ! You should have received a copy of the GNU Lesser General Public License
- ! along with this program. If not, see http://gnu.org/licenses/lgpl.txt.
+ ! along with this program. If not, see <http://gnu.org/licenses/lgpl.txt>.
  !
  ! Author:    Florian Wolters <wolters.fl@gmail.com>
  ! Copyright: 2011-2012 Florian Wolters
@@ -52,8 +52,8 @@
      ! used to compose a test suite out of test suites and test cases.
      !-->
     <testsuites>
-        <testsuite name="Unit Test Suite">
-            <directory>src/tests</directory>
+        <testsuite name="Unit (Class) Test Suite">
+            <directory>src/tests/unit-tests/php</directory>
         </testsuite>
     </testsuites>
 
@@ -66,7 +66,7 @@
             <directory suffix=".php">vendor</directory>
             <directory suffix=".php">src/tests</directory>
         </blacklist>
-        <whitelist addUncoveredFilesFromWhitelist="true">
+        <whitelist processUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">src/bin</directory>
             <directory suffix=".php">src/php</directory>
             <exclude>
