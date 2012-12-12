@@ -17,12 +17,13 @@ trait SingletonTrait
     /**
      * Returns the *Singleton* instance of the class using this trait.
      *
+     * @staticvar object[] $instances The *Singleton* instances of the classes
+     *                                using this trait.
+     *
      * @return object The *Singleton* instance.
      */
     final public static function getInstance()
     {
-        // The instances of the classes using this trait.
-        //
         // This attribute has to be an array because it is shared across all
         // classes using this trait. Without an array, the first time an
         // instance is created and stored in this variable, all other calls
@@ -67,6 +68,8 @@ trait SingletonTrait
      * instance.
      *
      * @return void
+     *
+     * @noinspection PhpUnusedPrivateMethodInspection
      */
     final private function __wakeup()
     {
