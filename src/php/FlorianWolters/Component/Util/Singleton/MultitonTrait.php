@@ -15,6 +15,8 @@ namespace FlorianWolters\Component\Util\Singleton;
  */
 trait MultitonTrait
 {
+    use ReflectionTrait;
+
     /**
      * Returns the *Multiton* instance of the class using this trait.
      *
@@ -40,7 +42,10 @@ trait MultitonTrait
         $key = $className . \serialize($arguments);
 
         if (false === isset($instances[$key])) {
-            $instances[$key] = new $className($arguments);
+            $instances[$key] = self::createNewInstanceWithoutConstructor(
+                $className,
+                $arguments
+            );
         }
 
         return $instances[$key];

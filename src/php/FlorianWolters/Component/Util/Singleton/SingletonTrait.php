@@ -14,6 +14,8 @@ namespace FlorianWolters\Component\Util\Singleton;
  */
 trait SingletonTrait
 {
+    use ReflectionTrait;
+
     /**
      * Returns the *Singleton* instance of the class using this trait.
      *
@@ -37,7 +39,10 @@ trait SingletonTrait
 
         if (false === isset($instances[$className])) {
             $arguments = \func_get_args();
-            $instances[$className] = new $className($arguments);
+            $instances[$className] = self::createNewInstanceWithoutConstructor(
+                $className,
+                $arguments
+            );
         }
 
         return $instances[$className];

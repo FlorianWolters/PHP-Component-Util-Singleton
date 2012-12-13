@@ -8,18 +8,18 @@ namespace FlorianWolters\Mock;
  * @link      http://github.com/FlorianWolters/PHP-Component-Util-Singleton
  * @since     Class available since Release 0.3.0
  */
-class SingletonWithArguments extends SingletonWithoutArguments
+class MultitonWithArguments extends MultitonWithoutArguments
 {
     /**
      * @var string
      */
     public $string;
-    
+
     /**
      * @var boolean
      */
     public $boolean;
-    
+
     /**
      * The protected constructor.
      *

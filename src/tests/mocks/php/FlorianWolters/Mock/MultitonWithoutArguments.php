@@ -1,7 +1,7 @@
 <?php
 namespace FlorianWolters\Mock;
 
-use FlorianWolters\Component\Util\Singleton\SingletonTrait;
+use FlorianWolters\Component\Util\Singleton\MultitonTrait;
 
 /**
  * @author    Florian Wolters <wolters.fl@gmail.com>
@@ -10,7 +10,7 @@ use FlorianWolters\Component\Util\Singleton\SingletonTrait;
  * @link      http://github.com/FlorianWolters/PHP-Component-Util-Singleton
  * @since     Class available since Release 0.3.0
  */
-class SingletonWithoutArguments
+class MultitonWithoutArguments
 {
-    use SingletonTrait;
+    use MultitonTrait;
 }

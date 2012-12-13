@@ -2,18 +2,18 @@
 namespace FlorianWolters\Component\Util\Singleton;
 
 /**
- * Test class for {@link SingletonTrait}.
+ * Test class for {@link MultitonTrait}.
  *
  * @author    Florian Wolters <wolters.fl@gmail.com>
  * @copyright 2011 Florian Wolters
  * @license   http://gnu.org/licenses/lgpl.txt LGPL-3.0+
  * @link      http://github.com/FlorianWolters/PHP-Component-Util-Singleton
- * @see       SingletonTrait
- * @since     Class available since Release 0.1.0
+ * @see       MultitonTrait
+ * @since     Class available since Release 0.3.0
  *
- * @covers FlorianWolters\Component\Util\Singleton\SingletonTrait
+ * @covers FlorianWolters\Component\Util\Singleton\MultitonTrait
  */
-class SingletonTraitTest extends SingletonTestAbstract
+class MultitonTraitTest extends SingletonTestAbstract
 {
     /**
      * Sets up the fixture.
@@ -24,9 +24,9 @@ class SingletonTraitTest extends SingletonTestAbstract
      */
     public static function setUpBeforeClass()
     {
-        self::$traitName = __NAMESPACE__ . '\SingletonTrait';
-        self::$classNameParent = 'FlorianWolters\Mock\SingletonWithoutArguments';
-        self::$classNameChild = 'FlorianWolters\Mock\SingletonWithArguments';
+        self::$traitName = __NAMESPACE__ . '\MultitonTrait';
+        self::$classNameParent = 'FlorianWolters\Mock\MultitonWithoutArguments';
+        self::$classNameChild = 'FlorianWolters\Mock\MultitonWithArguments';
     }
 
     /**
@@ -58,6 +58,6 @@ class SingletonTraitTest extends SingletonTestAbstract
         $firstInstance = $className::getInstance('foo');
         $secondInstance = $className::getInstance('bar');
 
-        $this->assertEquals($firstInstance, $secondInstance);
+        $this->assertNotEquals($firstInstance, $secondInstance);
     }
 }
