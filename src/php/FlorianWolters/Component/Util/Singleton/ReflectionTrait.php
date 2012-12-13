@@ -2,6 +2,7 @@
 namespace FlorianWolters\Component\Util\Singleton;
 
 use \ReflectionClass;
+use \ReflectionException;
 
 /**
  * The trait {@link ReflectionTrait} contains static methods which simplify the
@@ -28,6 +29,9 @@ trait ReflectionTrait
      *                            constructor.
      *
      * @return object A new instance of the class to reflect.
+     *
+     * @throw ReflectionException If the class with the specified class name
+     *                            does not exist.
      */
     private static function createNewInstanceWithoutConstructor(
         $className,
@@ -36,8 +40,11 @@ trait ReflectionTrait
         $reflectedClass = new ReflectionClass($className);
         $newInstance = $reflectedClass->newInstanceWithoutConstructor();
         $reflectedConstructor = $reflectedClass->getConstructor();
-        $reflectedConstructor->setAccessible(true);
-        $reflectedConstructor->invokeArgs($newInstance, $parameters);
+
+        if (null !== $reflectedConstructor) {
+            $reflectedConstructor->setAccessible(true);
+            $reflectedConstructor->invokeArgs($newInstance, $parameters);
+        }
 
         return $newInstance;
     }
