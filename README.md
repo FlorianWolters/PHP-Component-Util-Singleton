@@ -2,9 +2,9 @@
 
 [![Build Status](https://secure.travis-ci.org/FlorianWolters/PHP-Component-Util-Singleton.png?branch=master)](http://travis-ci.org/FlorianWolters/PHP-Component-Util-Singleton)
 
-**FlorianWolters\Component\Util\Singleton** is a simple-to-use [PHP][17] component that provides the *Singleton* design pattern as an [interface][22], an [abstract class][21] and a [trait][23].
+**FlorianWolters\Component\Util\Singleton** is a simple-to-use [PHP][17] component that provides the *Singleton* (and *Registry of Singletons* a.k.a. *Multiton*) design pattern as a simple-to-use component.
 
-The current version is *0.2.2-stable*, which means the API may change until version *1.0.0-stable*.
+The current version is **0.3.0**, which means the **API may change** until version *1.0.0*.
 
 ## Introduction
 
@@ -14,18 +14,22 @@ The current version is *0.2.2-stable*, which means the API may change until vers
 
 -- E. Gamma, et al. Design Patterns: elements of reusable object-Oriented software. Westford: Addison-Wesley, 1995, p. 157.
 
-It is suggested to use the trait `SingletonTrait` and not the abstract class `SingletonAbstract`. Refer to the section **Features** below for the reason why.
+**FlorianWolters\Component\Util\Singleton** contains of two traits:
+
+* `FlorianWolters\Component\Util\Singleton\SingletonTrait`: A generic implementation of the *Singleton* creational design pattern.
+* `FlorianWolters\Component\Util\Singleton\MultitonTrait`: A generic implementation of the *Registry of Singletons* a.k.a. *Multiton* creational design pattern.
+
+The generic implementation of the traits makes this component **reusable** (see the section **Features** below).
 
 ## Features
 
-* Follows the naming conventions for the *Singleton* design pattern (e.g. offers a static method `getInstance()`).
-* Allows to pass arguments to the static method `getInstance()` (and therefore to the `protected` constructor of the class). Because of that, the arguments should be validated within the constructor `__construct()`.
-* Allows a number of unlimited classes to use the trait `SingletonTrait`.
-    * **Benefit:** A class which uses the `SingletonTrait` can still inherit from another class.
-* Allows a number of unlimited classes to subclass the abstract class `SingletonAbstract`. Each class which inherits from `SingletonAbstract` is a *Singleton*. This is realized via *late static binding*.
-    * **Downside:** A class which inherits from `SingletonAbstract` can not inherit from another class, since PHP does not allow multiple inheritance.
-* Allows to use the *Dependency Injection* architectural pattern. This can be achieved by using *Interface Injection* with the interface `SingletonInterface`.
-    * **NOTE:** This is a weak point since only a class is a *Singleton* does not mean it provides the same functionality as other *Singleton* classes.
+* Allows to pass parameters to the static *Creation Method* `getInstance()`. These parameters are passed to the `protected` constructor of the class using the component.
+* Allows a number of unlimited classes to use the component.
+    * A class which uses the `SingletonTrait` (or `MultitonTrait`) can still inherit from another class.
+    * A class which extends a class using the `SingletonTrait` (or `MultitonTrait`) is a **new** *Singleton* (or *Multiton*). Therefore the component supports inheritance.
+* Disallows cloning and serializing of a *Singleton* (or *Multiton*) instance.
+* Disallows overriding of the methods `getInstance()`, `__clone`, `__wakeup`.
+* Follows the naming conventions for the *Singleton* design pattern (offers a static *Creation Method* `getInstance()`).
 * Artifacts tested with both static and dynamic test procedures:
     * Dynamic component tests (unit tests) implemented using [PHPUnit][19].
     * Static code analysis performed using the following tools:
@@ -34,8 +38,8 @@ It is suggested to use the trait `SingletonTrait` and not the abstract class `Si
         * [phpcpd][4]: Copy/Paste Detector (CPD)
         * [phpdcd][5]: Dead Code Detector (DCD)
 * Installable via [Composer][3] or [PEAR installer][11]:
-    * Provides a [Packagist][25] package which can be installed using the dependency manager [Composer][3].
-        * Click [here][24] for the package on [Packagist][25].
+    * Provides a [Packagist][22] package which can be installed using the dependency manager [Composer][3].
+        * Click [here][21] for the package on [Packagist][22].
     * Provides a [PEAR package][13] which can be installed using the package manager [PEAR installer][11].
         * Click [here][9] for the [PEAR channel][12].
 * Provides a complete Application Programming Interface (API) documentation generated with the documentation generator [ApiGen][2].
@@ -47,8 +51,7 @@ It is suggested to use the trait `SingletonTrait` and not the abstract class `Si
 
 ## Requirements
 
-* [PHP][17] >= 5.3.0
-* [PHP][17] >= 5.4.0 to use the trait `SingletonTrait`
+* [PHP][17] >=5.4
 
 ## Installation
 
@@ -80,7 +83,7 @@ If you are creating a component that relies on **FlorianWolters\Component\Util\S
 ```json
 {
     "require": {
-        "florianwolters/component-util-singleton": "0.2.*"
+        "florianwolters/component-util-singleton": "0.3.*"
     }
 }
 ```
@@ -95,8 +98,8 @@ If you are creating a component that relies on **FlorianWolters\Component\Util\S
     <package>
       <name>Singleton</name>
       <channel>pear.florianwolters.de</channel>
-      <min>0.2.2</min>
-      <max>0.2.99</max>
+      <min>0.3.0</min>
+      <max>0.3.99</max>
     </package>
   </required>
 </dependencies>
@@ -137,27 +140,46 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 You should have received a copy of the GNU Lesser General Public License along with this program. If not, see <http://gnu.org/licenses/lgpl.txt>.
 
 [1]: http://blog.florianwolters.de/PHP-Component-Util-Singleton
+     "FlorianWolters\Component\Util\Singleton | Application Programming Interface (API) documentation"
 [2]: http://apigen.org
+     "ApiGen | API documentation generator for PHP 5.3.+"
 [3]: http://getcomposer.org
+     "Composer"
 [4]: https://github.com/sebastianbergmann/phpcpd
+     "sebastianbergmann/phpcpd � GitHub"
 [5]: https://github.com/sebastianbergmann/phpdcd
+     "sebastianbergmann/phpdcd � GitHub"
 [6]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md
+     "PSR-0 requirements for autoloader interoperability"
 [7]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md
+     "PSR-1 basic coding style guide"
 [8]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md
+     "PSR-2 coding style guide"
 [9]: http://pear.florianwolters.de
+     "PEAR channel of Florian Wolters"
 [10]: http://pear.php.net
+      "PEAR - PHP Extension and Application Repository"
 [11]: http://pear.php.net/manual/en/guide.users.commandline.cli.php
+      "Manual :: Command line installer (PEAR)"
 [12]: http://pear.php.net/manual/en/guide.users.concepts.channel.php
+      "Manual :: PEAR Channels"
 [13]: http://pear.php.net/manual/en/guide.users.concepts.package.php
+      "Manual :: PEAR Packages"
 [14]: http://pear.php.net/package/PHP_CodeSniffer
+      "PHP_CodeSniffer"
 [15]: http://phing.info
+      "Phing"
 [16]: https://github.com/stuartherbert/phix4componentdev
+      "stuartherbert/phix4componentdev � GitHub"
 [17]: http://php.net
+      "PHP: Hypertext Preprocessor"
 [18]: http://phpmd.org
+      "PHPMD - PHP Mess Detector"
 [19]: http://phpunit.de
+      "sebastianbergmann/phpunit � GitHub"
 [20]: http://semver.org
-[21]: http://php.net/language.oop5.abstract
-[22]: http://php.net/language.oop5.interfaces
-[23]: http://php.net/language.oop5.traits
-[24]: http://packagist.org/packages/florianwolters/component-util-singleton
-[25]: http://packagist.org
+      "Semantic Versioning"
+[21]: http://packagist.org/packages/florianwolters/component-util-singleton
+      "florianwolters/component-util-singleton - Packagist"
+[22]: http://packagist.org
+      "Packagist"
