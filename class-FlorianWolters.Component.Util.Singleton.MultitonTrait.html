@@ -2,13 +2,13 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="generator" content="ApiGen 2.7.0" />
+	<meta name="generator" content="ApiGen 2.8.0" />
 
-	<title>Class FlorianWolters\Component\Util\Singleton\SingletonAbstract | FlorianWolters\Component\Util\Singleton</title>
+	<title>Trait FlorianWolters\Component\Util\Singleton\MultitonTrait | FlorianWolters\Component\Util\Singleton</title>
 
-	<script type="text/javascript" src="resources/combined.js?2388493914"></script>
-	<script type="text/javascript" src="elementlist.js?3478781264"></script>
-	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?1567499433" />
+	<script type="text/javascript" src="resources/combined.js?819867491"></script>
+	<script type="text/javascript" src="elementlist.js?3757031925"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360" />
 
 </head>
 
@@ -37,18 +37,12 @@
 
 
 		<div id="elements">
-			<h3>Classes</h3>
-			<ul>
-				<li class="active"><a href="class-FlorianWolters.Component.Util.Singleton.SingletonAbstract.html">SingletonAbstract</a></li>
-			</ul>
 
-			<h3>Interfaces</h3>
-			<ul>
-				<li><a href="class-FlorianWolters.Component.Util.Singleton.SingletonInterface.html">SingletonInterface</a></li>
-			</ul>
 
 			<h3>Traits</h3>
 			<ul>
+				<li class="active"><a href="class-FlorianWolters.Component.Util.Singleton.MultitonTrait.html">MultitonTrait</a></li>
+				<li><a href="class-FlorianWolters.Component.Util.Singleton.ReflectionTrait.html">ReflectionTrait</a></li>
 				<li><a href="class-FlorianWolters.Component.Util.Singleton.SingletonTrait.html">SingletonTrait</a></li>
 			</ul>
 
@@ -93,23 +87,24 @@
 	</div>
 
 <div id="content" class="class">
-	<h1>Class SingletonAbstract</h1>
+	<h1>Trait MultitonTrait</h1>
 
 
 	<div class="description">
 	
-<p>The <code><a href="class-FlorianWolters.Component.Util.Singleton.SingletonAbstract.html">FlorianWolters\Component\Util\Singleton\SingletonAbstract</a></code> class implements the <em>Singleton</em>
-creational design pattern to ensure a class only has one instance, and to
-provide a global point of access to it.</p>
+<p>The trait <code><a href="class-FlorianWolters.Component.Util.Singleton.MultitonTrait.html">FlorianWolters\Component\Util\Singleton\MultitonTrait</a></code> implements the <em>Multiton</em> (also known
+as <em>Registry of Singletons</em>) creational design pattern to ensure a class
+only has a limited number of instances, and to provide a global point of access
+to it.</p>
 
 	</div>
 
 	<dl class="tree">
 		<dd style="padding-left:0px">
-<b><span>FlorianWolters\Component\Util\Singleton\SingletonAbstract</span></b>			
-			 implements 
-				<a href="class-FlorianWolters.Component.Util.Singleton.SingletonInterface.html"><span>FlorianWolters\Component\Util\Singleton\SingletonInterface</span></a>
+<b><span>FlorianWolters\Component\Util\Singleton\MultitonTrait</span></b>			
 			
+			 uses 
+				<a href="class-FlorianWolters.Component.Util.Singleton.ReflectionTrait.html"><span>FlorianWolters\Component\Util\Singleton\ReflectionTrait</span></a>
 			
 		</dd>
 	</dl>
@@ -122,26 +117,25 @@ provide a global point of access to it.</p>
 
 
 	<div class="info">
-		<b>Abstract</b><br />
+		
 		
 		<b>Namespace:</b> <a href="namespace-FlorianWolters.html">FlorianWolters</a>\<a href="namespace-FlorianWolters.Component.html">Component</a>\<a href="namespace-FlorianWolters.Component.Util.html">Util</a>\<a href="namespace-FlorianWolters.Component.Util.Singleton.html">Singleton</a><br />
 		
 
 				<b>Copyright:</b>
-				2011-2012 Florian Wolters<br />
+				2012 Florian Wolters<br />
 				<b>License:</b>
 				<a href="http://gnu.org/licenses/lgpl.txt">LGPL-3.0+</a><br />
 				<b>Author:</b>
 				Florian Wolters &lt;<a
 href="mailto:wolters.fl&#64;gmail.com">wolters.fl&#64;<!---->gmail.com</a>&gt;<br />
-				<b>Version:</b>
-				Release: @package_version@<br />
 				<b>Since:</b>
-				Class available since Release 0.1.0<br />
+				Trait available since Release 0.1.0<br />
 				<b>Link:</b>
 				<a href="http://github.com/FlorianWolters/PHP-Component-Util-Singleton">http://github.com/FlorianWolters/PHP-Component-Util-Singleton</a><br />
-		<b>Located at</b> <a href="source-class-FlorianWolters.Component.Util.Singleton.SingletonAbstract.html#4" title="Go to source code">FlorianWolters/Component/Util/Singleton/SingletonAbstract.php</a><br />
+		<b>Located at</b> <a href="source-class-FlorianWolters.Component.Util.Singleton.MultitonTrait.html#4-86" title="Go to source code">FlorianWolters/Component/Util/Singleton/MultitonTrait.php</a><br />
 	</div>
+
 
 
 	<table class="summary" id="methods">
@@ -149,39 +143,37 @@ href="mailto:wolters.fl&#64;gmail.com">wolters.fl&#64;<!---->gmail.com</a>&gt;<b
 	<tr data-order="getInstance" id="_getInstance">
 
 		<td class="attributes"><code>
-			final public static
-			<code><a href="class-FlorianWolters.Component.Util.Singleton.SingletonInterface.html">FlorianWolters\Component\Util\Singleton\SingletonInterface</a></code>
+			 public static
+			object
 			
 			</code>
 		</td>
 
 		<td class="name"><div>
 		<a class="anchor" href="#_getInstance">#</a>
-		<code><a href="source-class-FlorianWolters.Component.Util.Singleton.SingletonAbstract.html#18" title="Go to source code">getInstance</a>( )</code>
+		<code><a href="source-class-FlorianWolters.Component.Util.Singleton.MultitonTrait.html#20-52" title="Go to source code">getInstance</a>( )</code>
 
 		<div class="description short">
 			
-<p>Returns the <em>Singleton</em> instance of this class.</p>
+<p>Returns the <em>Multiton</em> instance of the class using this trait.</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Returns the <em>Singleton</em> instance of this class.</p>
+<p>Returns the <em>Multiton</em> instance of the class using this trait.</p>
 
 
 
 
 				<h4>Returns</h4>
 				<div class="list">
-					<code><code><a href="class-FlorianWolters.Component.Util.Singleton.SingletonInterface.html">FlorianWolters\Component\Util\Singleton\SingletonInterface</a></code></code><br>The <em>Singleton</em> instance.<br />
+					<code>object</code><br>The <em>Multiton</em> instance.<br />
 				</div>
 
 
 
 
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-FlorianWolters.Component.Util.Singleton.SingletonInterface.html#_">FlorianWolters\Component\Util\Singleton\SingletonInterface::getInstance</a></code></div>
 		</div>
 		</div></td>
 	</tr>
@@ -196,19 +188,19 @@ href="mailto:wolters.fl&#64;gmail.com">wolters.fl&#64;<!---->gmail.com</a>&gt;<b
 
 		<td class="name"><div>
 		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-FlorianWolters.Component.Util.Singleton.SingletonAbstract.html#48" title="Go to source code">__construct</a>( )</code>
+		<code><a href="source-class-FlorianWolters.Component.Util.Singleton.MultitonTrait.html#56-62" title="Go to source code">__construct</a>( )</code>
 
 		<div class="description short">
 			
-<p>Protected constructor that prevents creating a new instance of this
-<em>Singleton</em> via the <code>new</code> operator.</p>
+<p>Protected constructor to prevent creating a new instance of this class via
+the <code>new</code> operator.</p>
 
 		</div>
 
 		<div class="description detailed hidden">
 			
-<p>Protected constructor that prevents creating a new instance of this
-<em>Singleton</em> via the <code>new</code> operator.</p>
+<p>Protected constructor to prevent creating a new instance of this class via
+the <code>new</code> operator.</p>
 
 
 
@@ -231,10 +223,18 @@ href="mailto:wolters.fl&#64;gmail.com">wolters.fl&#64;<!---->gmail.com</a>&gt;<b
 
 
 
+
+
+
+
+
+
+
+
 </div>
 
 	<div id="footer">
-		FlorianWolters\Component\Util\Singleton API documentation generated by <a href="http://apigen.org">ApiGen 2.7.0</a>
+		FlorianWolters\Component\Util\Singleton API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
 	</div>
 </div>
 </div>
