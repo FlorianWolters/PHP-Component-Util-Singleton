@@ -2,7 +2,7 @@
 
 [![Build Status](https://secure.travis-ci.org/FlorianWolters/PHP-Component-Util-Singleton.png?branch=master)](http://travis-ci.org/FlorianWolters/PHP-Component-Util-Singleton)
 
-**FlorianWolters\Component\Util\Singleton** is a simple-to-use [PHP][17] component that provides the *Singleton* (and *Registry of Singletons* a.k.a. *Multiton*) design pattern as a simple-to-use component.
+**FlorianWolters\Component\Util\Singleton** provides the *Singleton* (and *Registry of Singletons* a.k.a. *Multiton*) design pattern as a simple-to-use component.
 
 The current version is **0.3.0**, which means the **API may change** until version *1.0.0*.
 
