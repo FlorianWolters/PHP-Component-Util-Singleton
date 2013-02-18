@@ -1,0 +1,102 @@
+{
+    "hash": "41077478e0ce62b2ee4190741dadff9f",
+    "packages": [
+        {
+            "name": "florianwolters/component-core-stringutils",
+            "version": "v0.2.0-beta",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FlorianWolters/PHP-Component-Core-StringUtils.git",
+                "reference": "v0.2.0-beta"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FlorianWolters/PHP-Component-Core-StringUtils/zipball/v0.2.0-beta",
+                "reference": "v0.2.0-beta",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "time": "2013-02-18 12:59:12",
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "FlorianWolters": "src/php"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Florian Wolters",
+                    "email": "wolters.fl@gmail.com",
+                    "homepage": "http://blog.florianwolters.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Offers operations on the data type string.",
+            "homepage": "http://github.com/FlorianWolters/PHP-Component-Core-StringUtils",
+            "keywords": [
+                "helper",
+                "language",
+                "string",
+                "wrapper"
+            ]
+        },
+        {
+            "name": "florianwolters/component-util-reflection",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FlorianWolters/PHP-Component-Util-Reflection.git",
+                "reference": "v0.1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FlorianWolters/PHP-Component-Util-Reflection/zipball/v0.1.0",
+                "reference": "v0.1.0",
+                "shasum": ""
+            },
+            "require": {
+                "florianwolters/component-core-stringutils": ">=0.2-beta",
+                "php": ">=5.4"
+            },
+            "time": "2013-02-18 14:01:34",
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "FlorianWolters": "src/php"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Florian Wolters",
+                    "email": "wolters.fl@gmail.com",
+                    "homepage": "http://blog.florianwolters.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Offers operations for the PHP Reflection API.",
+            "homepage": "http://github.com/FlorianWolters/PHP-Component-Util-Reflection",
+            "keywords": [
+                "reflection",
+                "utility"
+            ]
+        }
+    ],
+    "packages-dev": null,
+    "aliases": [
+
+    ],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "florianwolters/component-core-stringutils": 10
+    }
+}

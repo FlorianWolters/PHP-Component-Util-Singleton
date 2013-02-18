@@ -1,6 +1,8 @@
 <?php
 namespace FlorianWolters\Component\Util\Singleton;
 
+use FlorianWolters\Component\Util\ReflectionUtils;
+
 /**
  * The trait {@link SingletonTrait} implements the *Singleton* creational design
  * pattern to ensure a class only has one instance, and to provide a global
@@ -14,8 +16,6 @@ namespace FlorianWolters\Component\Util\Singleton;
  */
 trait SingletonTrait
 {
-    use ReflectionTrait;
-
     /**
      * Returns the *Singleton* instance of the class using this trait.
      *
@@ -39,7 +39,7 @@ trait SingletonTrait
 
         if (false === isset($instances[$className])) {
             $arguments = \func_get_args();
-            $instances[$className] = self::createNewInstanceWithoutConstructor(
+            $instances[$className] = ReflectionUtils::createNewInstanceWithoutConstructor(
                 $className,
                 $arguments
             );

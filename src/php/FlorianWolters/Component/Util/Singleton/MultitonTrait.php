@@ -1,6 +1,8 @@
 <?php
 namespace FlorianWolters\Component\Util\Singleton;
 
+use FlorianWolters\Component\Util\ReflectionUtils;
+
 /**
  * The trait {@link MultitonTrait} implements the *Multiton* (also known as
  * *Registry of Singletons*) creational design pattern to ensure a class only
@@ -15,8 +17,6 @@ namespace FlorianWolters\Component\Util\Singleton;
  */
 trait MultitonTrait
 {
-    use ReflectionTrait;
-
     /**
      * Returns the *Multiton* instance of the class using this trait.
      *
@@ -42,7 +42,7 @@ trait MultitonTrait
         $key = $className . \serialize($arguments);
 
         if (false === isset($instances[$key])) {
-            $instances[$key] = self::createNewInstanceWithoutConstructor(
+            $instances[$key] = ReflectionUtils::createNewInstanceWithoutConstructor(
                 $className,
                 $arguments
             );
