@@ -4,13 +4,13 @@ namespace FlorianWolters\Component\Util\Singleton;
 use FlorianWolters\Component\Util\ReflectionUtils;
 
 /**
- * The trait {@link MultitonTrait} implements the *Multiton* (also known as
+ * The trait {@see MultitonTrait} implements the *Multiton* (also known as
  * *Registry of Singletons*) creational design pattern to ensure a class only
  * has a limited number of instances, and to provide a global point of access to
  * it.
  *
  * @author    Florian Wolters <wolters.fl@gmail.com>
- * @copyright 2012 Florian Wolters
+ * @copyright 2012-2013 Florian Wolters
  * @license   http://gnu.org/licenses/lgpl.txt LGPL-3.0+
  * @link      http://github.com/FlorianWolters/PHP-Component-Util-Singleton
  * @since     Trait available since Release 0.1.0

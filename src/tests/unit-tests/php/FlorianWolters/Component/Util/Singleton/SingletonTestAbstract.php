@@ -5,11 +5,11 @@ use \ReflectionClass;
 use \ReflectionMethod;
 
 /**
- * Test abstract class {@link SingletonTestAbstract} is the base test case for
+ * Test abstract class {@see SingletonTestAbstract} is the base test case for
  * all *Singleton* implementations.
  *
  * @author    Florian Wolters <wolters.fl@gmail.com>
- * @copyright 2011 Florian Wolters
+ * @copyright 2011-2013 Florian Wolters
  * @license   http://gnu.org/licenses/lgpl.txt LGPL-3.0+
  * @link      http://github.com/FlorianWolters/PHP-Component-Util-Singleton
  * @since     Class available since Release 0.1.0
