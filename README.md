@@ -2,9 +2,7 @@
 
 [![Build Status](https://secure.travis-ci.org/FlorianWolters/PHP-Component-Util-Singleton.png?branch=master)](http://travis-ci.org/FlorianWolters/PHP-Component-Util-Singleton)
 
-**FlorianWolters\Component\Util\Singleton** provides the *Singleton* (and *Registry of Singletons* a.k.a. *Multiton*) design pattern as a simple-to-use component.
-
-The current version is **0.3.0**, which means the **API may change** until version *1.0.0*.
+**FlorianWolters\Component\Util\Singleton** is a simple-to-use [PHP][17] component that provides the *Singleton* (and *Registry of Singletons* a.k.a. *Multiton*) creational design pattern.
 
 ## Introduction
 
@@ -16,19 +14,19 @@ The current version is **0.3.0**, which means the **API may change** until versi
 
 **FlorianWolters\Component\Util\Singleton** contains of two traits:
 
-* `FlorianWolters\Component\Util\Singleton\SingletonTrait`: A generic implementation of the *Singleton* creational design pattern.
-* `FlorianWolters\Component\Util\Singleton\MultitonTrait`: A generic implementation of the *Registry of Singletons* a.k.a. *Multiton* creational design pattern.
+* The trait [`FlorianWolters\Component\Util\Singleton\SingletonTrait`][23]: A generic implementation of the *Singleton* creational design pattern.
+* The trait [`FlorianWolters\Component\Util\Singleton\MultitonTrait`][24]: A generic implementation of the *Registry of Singletons* a.k.a. *Multiton* creational design pattern.
 
-The generic implementation of the traits makes this component **reusable** (see the section **Features** below).
+The generic implementations as traits make this component **reusable** (see the section **Features** below).
 
 ## Features
 
-* Allows to pass parameters to the static *Creation Method* `getInstance()`. These parameters are passed to the `protected` constructor of the class using the component.
+* Allows to pass parameters to the static *Creation Method* `getInstance()`. The parameters are passed to the `protected` constructor of the class using the component.
 * Allows a number of unlimited classes to use the component.
-    * A class which uses the `SingletonTrait` (or `MultitonTrait`) can still inherit from another class.
-    * A class which extends a class using the `SingletonTrait` (or `MultitonTrait`) is a **new** *Singleton* (or *Multiton*). Therefore the component supports inheritance.
+    * A class which uses the [`SingletonTrait`][23] (or [`MultitonTrait`][24]) can still inherit from another class.
+    * A class which extends a class using the [`SingletonTrait`][23] (or [`MultitonTrait`][24]) is a **new** *Singleton* (or *Multiton*). Therefore the component supports inheritance.
 * Disallows cloning and serializing of a *Singleton* (or *Multiton*) instance.
-* Disallows overriding of the methods `getInstance()`, `__clone`, `__wakeup`.
+* Disallows overriding of the methods `getInstance()`, `__clone` and `__wakeup`.
 * Follows the naming conventions for the *Singleton* design pattern (offers a static *Creation Method* `getInstance()`).
 * Artifacts tested with both static and dynamic test procedures:
     * Dynamic component tests (unit tests) implemented using [PHPUnit][19].
@@ -39,10 +37,13 @@ The generic implementation of the traits makes this component **reusable** (see 
         * [phpdcd][5]: Dead Code Detector (DCD)
 * Installable via [Composer][3] or [PEAR installer][11]:
     * Provides a [Packagist][22] package which can be installed using the dependency manager [Composer][3].
+
         * Click [here][21] for the package on [Packagist][22].
     * Provides a [PEAR package][13] which can be installed using the package manager [PEAR installer][11].
+
         * Click [here][9] for the [PEAR channel][12].
 * Provides a complete Application Programming Interface (API) documentation generated with the documentation generator [ApiGen][2].
+
     * Click [here][1] for the current API documentation.
 * Follows the [PSR-0][6] requirements for autoloader interoperability.
 * Follows the [PSR-1][7] basic coding style guide.
@@ -51,7 +52,11 @@ The generic implementation of the traits makes this component **reusable** (see 
 
 ## Requirements
 
-* [PHP][17] >=5.4
+* [PHP][17] >= 5.4
+
+## Usage
+
+The best documentation for **FlorianWolters\Component\Util\Singleton** are the unit tests, which are shipped in the package. You will find them installed into your [PEAR][10] repository, which on Linux systems is normally `/usr/share/php/test`.
 
 ## Installation
 
@@ -98,16 +103,12 @@ If you are creating a component that relies on **FlorianWolters\Component\Util\S
     <package>
       <name>Singleton</name>
       <channel>pear.florianwolters.de</channel>
-      <min>0.3.0</min>
+      <min>0.3.1</min>
       <max>0.3.99</max>
     </package>
   </required>
 </dependencies>
 ```
-
-## Usage
-
-The best documentation for **FlorianWolters\Component\Util\Singleton** are the unit tests, which are shipped in the package. You will find them installed into your [PEAR][10] repository, which on Linux systems is normally `/usr/share/php/test`.
 
 ## Development Environment
 
@@ -146,9 +147,9 @@ You should have received a copy of the GNU Lesser General Public License along w
 [3]: http://getcomposer.org
      "Composer"
 [4]: https://github.com/sebastianbergmann/phpcpd
-     "sebastianbergmann/phpcpd · GitHub"
+     "sebastianbergmann/phpcpd Â· GitHub"
 [5]: https://github.com/sebastianbergmann/phpdcd
-     "sebastianbergmann/phpdcd · GitHub"
+     "sebastianbergmann/phpdcd Â· GitHub"
 [6]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md
      "PSR-0 requirements for autoloader interoperability"
 [7]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md
@@ -170,16 +171,20 @@ You should have received a copy of the GNU Lesser General Public License along w
 [15]: http://phing.info
       "Phing"
 [16]: https://github.com/stuartherbert/phix4componentdev
-      "stuartherbert/phix4componentdev · GitHub"
+      "stuartherbert/phix4componentdev Â· GitHub"
 [17]: http://php.net
       "PHP: Hypertext Preprocessor"
 [18]: http://phpmd.org
       "PHPMD - PHP Mess Detector"
 [19]: http://phpunit.de
-      "sebastianbergmann/phpunit · GitHub"
+      "sebastianbergmann/phpunit Â· GitHub"
 [20]: http://semver.org
       "Semantic Versioning"
 [21]: http://packagist.org/packages/florianwolters/component-util-singleton
       "florianwolters/component-util-singleton - Packagist"
 [22]: http://packagist.org
       "Packagist"
+[23]: src/php/FlorianWolters/Component/Util/Singleton/SingletonTrait.php
+      "FlorianWolters\Component\Util\Singleton\SingletonTrait"
+[24]: src/php/FlorianWolters/Component/Util/Singleton/MultitonTrait.php
+      "FlorianWolters\Component\Util\Singleton\MultitonTrait"
