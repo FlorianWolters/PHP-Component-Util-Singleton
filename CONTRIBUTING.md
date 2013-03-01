@@ -47,6 +47,6 @@ Run the test suite(s) with the following command in the directory with the local
 [2]: https://github.com/signup/free
      "Sign up for GitHub"
 [3]: http://phpunit.de
-     "sebastianbergmann/phpunit · GitHub"
+     "sebastianbergmann/phpunit Â· GitHub"
 [4]: http://pear.php.net/manual/en/guide.users.commandline.cli.php
      "Manual :: Command line installer (PEAR)"
