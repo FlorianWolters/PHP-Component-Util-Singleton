@@ -1,6 +1,6 @@
 {
     "name": "florianwolters/component-util-singleton",
-    "description": "The Singleton (and Registry of Singletons a.k.a. Multiton) design pattern as a simple-to-use component.",
+    "description": "The Singleton (and Registry of Singletons a.k.a. Multiton) design pattern as a PHP component.",
     "type": "library",
     "keywords": ["singleton", "utility", "pattern", "creation"],
     "homepage": "http://github.com/FlorianWolters/PHP-Component-Util-Singleton",
