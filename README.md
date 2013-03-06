@@ -10,7 +10,7 @@
 
 > "Ensure a class only has once instance, and provide a global access point to it."
 
--- E. Gamma, et al. Design Patterns: elements of reusable object-Oriented software. Westford: Addison-Wesley, 1995, p. 157.
+-- E. Gamma, et al. Design Patterns: Elements of Reusable Object-Oriented software. Westford: Addison-Wesley, 1995.
 
 **FlorianWolters\Component\Util\Singleton** contains of two traits:
 
