@@ -83,13 +83,6 @@ ${contents}</dir>
                 <min>0.1.0</min>
                 <max>0.1.99</max>
             </package>
-
-            <package>
-                <name>StringUtils</name>
-                <channel>pear.florianwolters.de</channel>
-                <min>0.2.0</min>
-                <max>0.2.99</max>
-            </package>
         </required>
     </dependencies>
 
