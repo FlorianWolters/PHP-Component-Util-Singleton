@@ -70,7 +70,7 @@ ${contents}</dir>
 
             <php>
                 <min>5.4.0</min>
-                <max>5.4.99</max>
+                <max>5.5.99</max>
             </php>
 
             <pearinstaller>
@@ -80,15 +80,38 @@ ${contents}</dir>
             <package>
                 <name>Reflection</name>
                 <channel>pear.florianwolters.de</channel>
-                <min>0.1.0</min>
-                <max>0.1.99</max>
+                <min>0.2.0</min>
+                <max>0.2.99</max>
             </package>
+
+            <package>
+                <name>StringUtils</name>
+                <channel>pear.florianwolters.de</channel>
+                <min>0.3.0</min>
+                <max>0.3.99</max>
+            </package>
+
         </required>
     </dependencies>
 
     <phprelease />
 
     <changelog>
+        <release>
+            <version>
+                <release>0.3.2</release>
+                <api>0.3</api>
+            </version>
+            <stability>
+                <release>stable</release>
+                <api>beta</api>
+            </stability>
+            <date>2013-06-29</date>
+            <license uri="http://gnu.org/licenses/lgpl.txt">LGPL-3.0+</license>
+            <notes>- Added PHP version 5.5 support.
+- Fixed Composer and PEAR itnegration.</notes>
+        </release>
+
         <release>
             <version>
                 <release>0.3.1</release>
