@@ -23,7 +23,7 @@ trait MultitonTrait
      * @staticvar object[] $instances The *Multiton* instances of the classes
      *                                using this trait.
      *
-     * @return object The *Multiton* instance.
+     * @return static The *Multiton* instance.
      */
     public static function getInstance()
     {

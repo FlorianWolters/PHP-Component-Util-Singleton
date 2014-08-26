@@ -22,7 +22,7 @@ trait SingletonTrait
      * @staticvar object[] $instances The *Singleton* instances of the classes
      *                                using this trait.
      *
-     * @return object The *Singleton* instance.
+     * @return static The *Singleton* instance.
      */
     final public static function getInstance()
     {
