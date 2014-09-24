@@ -1,6 +1,7 @@
-.build
+build
 dist
 nbproject
 review
 vendor
+phpdoc.xml
 phpunit.xml

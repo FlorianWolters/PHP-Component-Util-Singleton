@@ -1,3 +1,0 @@
-User-agent: *
-Disallow:
-Sitemap: http://florianwolters.github.com/PHP-Component-Util-Singleton/sitemap.xml
