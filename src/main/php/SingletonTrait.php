@@ -1,4 +1,15 @@
 <?php
+/**
+ * FlorianWolters\Component\Util\Singleton\SingletonTrait
+ *
+ * PHP Version 5.4
+ *
+ * @author    Florian Wolters <wolters.fl@gmail.com>
+ * @copyright 2012-2014 Florian Wolters (http://blog.florianwolters.de)
+ * @license   http://gnu.org/licenses/lgpl.txt LGPL-3.0+
+ * @link      http://github.com/FlorianWolters/PHP-Component-Util-Singleton
+ */
+
 namespace FlorianWolters\Component\Util\Singleton;
 
 use FlorianWolters\Component\Util\ReflectionUtils;
@@ -8,18 +19,14 @@ use FlorianWolters\Component\Util\ReflectionUtils;
  * pattern to ensure a class only has one instance, and to provide a global
  * point of access to it.
  *
- * @author    Florian Wolters <wolters.fl@gmail.com>
- * @copyright 2012-2013 Florian Wolters
- * @license   http://gnu.org/licenses/lgpl.txt LGPL-3.0+
- * @link      http://github.com/FlorianWolters/PHP-Component-Util-Singleton
- * @since     Trait available since Release 0.1.0
+ * @since Trait available since Release 0.1.0
  */
 trait SingletonTrait
 {
     /**
      * Returns the *Singleton* instance of the class using this trait.
      *
-     * @staticvar object[] $instances The *Singleton* instances of the classes
+     * @staticvar static[] $instances The *Singleton* instances of the classes
      *                                using this trait.
      *
      * @return static The *Singleton* instance.
@@ -56,6 +63,7 @@ trait SingletonTrait
      */
     protected function __construct()
     {
+        // NOOP
     }
 
     /**
@@ -66,6 +74,7 @@ trait SingletonTrait
      */
     final private function __clone()
     {
+        // NOOP
     }
 
     /**
@@ -78,6 +87,7 @@ trait SingletonTrait
      */
     final private function __wakeup()
     {
+        // NOOP
     }
 
     // @codeCoverageIgnoreEnd

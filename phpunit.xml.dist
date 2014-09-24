@@ -18,7 +18,7 @@
  ! along with this program. If not, see <http://gnu.org/licenses/lgpl.txt>.
  !
  ! Author:    Florian Wolters <wolters.fl@gmail.com>
- ! Copyright: 2012-2013 Florian Wolters
+ ! Copyright: 2012-2014 Florian Wolters (http://blog.florianwolters.de)
  ! License:   http://gnu.org/licenses/lgpl.txt LGPL-3.0+
  ! Link:      http://github.com/FlorianWolters/PHP-Component-Util-Singleton
  !-->
@@ -27,7 +27,9 @@
  ! The attributes of the <phpunit> element can be used to configure PHPUnit's
  ! core functionality.
  !-->
-<phpunit backupGlobals="false"
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/4.2/phpunit.xsd"
+         backupGlobals="false"
          backupStaticAttributes="false"
          bootstrap="vendor/autoload.php"
          cacheTokens="true"
@@ -43,7 +45,9 @@
          stopOnFailure="false"
          stopOnIncomplete="false"
          stopOnSkipped="false"
-         testSuiteLoaderClass="PHPUnit_Runner_StandardTestSuiteLoader"
+         timeoutForSmallTests="1"
+         timeoutForMediumTests="10"
+         timeoutForLargeTests="60"
          strict="true"
          verbose="false">
 
@@ -52,8 +56,8 @@
      ! used to compose a test suite out of test suites and test cases.
      !-->
     <testsuites>
-        <testsuite name="Unit (Class) Test Suite">
-            <directory>src/tests/unit-tests/php</directory>
+        <testsuite name="Default Test Suite">
+            <directory>src/test/php</directory>
         </testsuite>
     </testsuites>
 
@@ -64,15 +68,14 @@
     <filter>
         <blacklist>
             <directory suffix=".php">vendor</directory>
-            <directory suffix=".php">src/tests</directory>
+            <directory suffix=".php">src/test</directory>
         </blacklist>
         <whitelist processUncoveredFilesFromWhitelist="true">
-            <directory suffix=".php">src/bin</directory>
-            <directory suffix=".php">src/php</directory>
+            <directory suffix=".php">src/main/php</directory>
             <exclude>
-                <directory suffix="Enum.php">src/php</directory>
-                <directory suffix="Exception.php">src/php</directory>
-                <directory suffix="Interface.php">src/php</directory>
+                <directory suffix="Enum.php">src/main/php</directory>
+                <directory suffix="Exception.php">src/main/php</directory>
+                <directory suffix="Interface.php">src/main/php</directory>
             </exclude>
         </whitelist>
     </filter>

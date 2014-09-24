@@ -18,13 +18,26 @@
         "florianwolters/component-util-reflection": "0.2.*",
         "florianwolters/component-core-stringutils": "0.3.*"
     },
+    "require-dev": {
+        "pdepend/pdepend": "2.*",
+        "phpmd/phpmd": "2.*",
+        "phpunit/phpunit": "4.*",
+        "sami/sami": "2.*",
+        "sebastian/phpcpd": "2.*",
+        "sebastian/phpdcd": "1.*",
+        "satooshi/php-coveralls": "0.*@dev",
+        "sensiolabs/security-checker": "2.*",
+        "squizlabs/php_codesniffer": "2.*@dev"
+    },
     "autoload": {
-        "psr-0": {
-            "FlorianWolters": [
-                "src/php",
-                "src/tests/unit-tests/php",
-                "src/tests/mocks/php"
-            ]
+        "psr-4": {
+            "FlorianWolters\\Component\\Util\\Singleton\\": "src/main/php"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "FlorianWolters\\Component\\Util\\Singleton\\": "src/test/php",
+            "FlorianWolters\\Example\\": "src/test/resources"
         }
     }
 }

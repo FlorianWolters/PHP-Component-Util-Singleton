@@ -1,4 +1,15 @@
 <?php
+/**
+ * FlorianWolters\Component\Util\Singleton\MultitonTrait
+ *
+ * PHP Version 5.4
+ *
+ * @author    Florian Wolters <wolters.fl@gmail.com>
+ * @copyright 2012-2014 Florian Wolters (http://blog.florianwolters.de)
+ * @license   http://gnu.org/licenses/lgpl.txt LGPL-3.0+
+ * @link      http://github.com/FlorianWolters/PHP-Component-Util-Singleton
+ */
+
 namespace FlorianWolters\Component\Util\Singleton;
 
 use FlorianWolters\Component\Util\ReflectionUtils;
@@ -9,19 +20,15 @@ use FlorianWolters\Component\Util\ReflectionUtils;
  * has a limited number of instances, and to provide a global point of access to
  * it.
  *
- * @author    Florian Wolters <wolters.fl@gmail.com>
- * @copyright 2012-2013 Florian Wolters
- * @license   http://gnu.org/licenses/lgpl.txt LGPL-3.0+
- * @link      http://github.com/FlorianWolters/PHP-Component-Util-Singleton
- * @since     Trait available since Release 0.1.0
+ * @since Trait available since Release 0.1.0
  */
 trait MultitonTrait
 {
     /**
      * Returns the *Multiton* instance of the class using this trait.
      *
-     * @staticvar object[] $instances The *Multiton* instances of the classes
-     *                                using this trait.
+     * @staticvar static[] $instances The *Multiton* instances of the classes
+     *    using this trait.
      *
      * @return static The *Multiton* instance.
      */
@@ -59,6 +66,7 @@ trait MultitonTrait
      */
     protected function __construct()
     {
+        // NOOP
     }
 
     /**
@@ -68,6 +76,7 @@ trait MultitonTrait
      */
     final private function __clone()
     {
+        // NOOP
     }
 
     /**
@@ -80,6 +89,7 @@ trait MultitonTrait
      */
     final private function __wakeup()
     {
+        // NOOP
     }
 
     // @codeCoverageIgnoreEnd
