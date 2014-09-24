@@ -1,6 +1,6 @@
-# .travis.yml
+# .coveralls.yml
 #
-# YAML configuration file for the continuous integration platform "Travis CI".
+# YAML configuration file for the continuous integration platform "Coveralls".
 #
 # This program is free software: you can redistribute it and/or modify it under
 # the terms of the GNU Lesser General Public License as published by the Free
@@ -20,32 +20,7 @@
 # License:   http://gnu.org/licenses/lgpl.txt LGPL-3.0+
 # Link:      http://github.com/FlorianWolters/PHP-Component-Util-Singleton
 
-language: php
-
-php:
-  - 5.4
-  - 5.5
-  - 5.6
-  - hhvm
-
-matrix:
-  allow_failures:
-    - php: hhvm
-
-install:
-  - composer selfupdate
-  - composer install --prefer-source --dev
-  - wget https://scrutinizer-ci.com/ocular.phar
-
-script:
-  - php vendor/bin/phpcs -wp --standard=psr2 --encoding=utf-8 src/
-  - php vendor/bin/phpunit --coverage-text -c phpunit.xml.dist
-
-after_script:
-  - php vendor/bin/coveralls -v
-  - php ocular.phar code-coverage:upload --format=php-clover review/phpcov/coverage.xml
-
-notifications:
-  email:
-    on_success: change
-    on_failure: always
+service_name: travis-ci
+src_dir: src
+coverage_clover: review/phpcov/coverage.xml
+json_path: review/coveralls-upload.json
