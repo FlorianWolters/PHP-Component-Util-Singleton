@@ -28,7 +28,7 @@
  ! core functionality.
  !-->
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/4.2/phpunit.xsd"
+         xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/4.3/phpunit.xsd"
          backupGlobals="false"
          backupStaticAttributes="false"
          bootstrap="vendor/autoload.php"
