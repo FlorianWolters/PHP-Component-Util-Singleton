@@ -39,7 +39,7 @@ Please use the following two [GitHub][1] features to contribute:
 Run the following commands to checkout
 [**FlorianWolters\Component\Util\Singleton**][10]:
 
-    md DebugPrint && cd DebugPrint
+    md Singleton && cd Singleton
     git clone git://github.com/FlorianWolters/PHP-Component-Util-Singleton.git
 
 ### Run the test suite(s)
