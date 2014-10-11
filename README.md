@@ -1,8 +1,8 @@
-# FlorianWolters\Component\Util\Singleton
+# Component\Util\Singleton
 
-**FlorianWolters\Component\Util\Singleton** is a simple-to-use [PHP][1]
-component that provides the *Singleton* (and *Registry of Singletons* a.k.a.
-*Multiton*) creational design pattern.
+**Component\Util\Singleton** is a simple-to-use [PHP][1] component that provides
+the *Singleton* (and *Registry of Singletons* a.k.a. *Multiton*) creational
+design pattern.
 
 [![Build Status](https://travis-ci.org/FlorianWolters/PHP-Component-Util-Singleton.svg?branch=master)](https://travis-ci.org/FlorianWolters/PHP-Component-Util-Singleton)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/FlorianWolters/PHP-Component-Util-Singleton/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/FlorianWolters/PHP-Component-Util-Singleton/?branch=master)
@@ -44,7 +44,7 @@ component that provides the *Singleton* (and *Registry of Singletons* a.k.a.
 -- E. Gamma, et al. Design Patterns: Elements of Reusable Object-Oriented
 software. Westford: Addison-Wesley, 1995.
 
-**FlorianWolters\Component\Util\Singleton** contains of two traits:
+**Component\Util\Singleton** contains of two traits:
 
 * The trait [`SingletonTrait`][53]: A generic implementation of the *Singleton*
   creational design pattern.
