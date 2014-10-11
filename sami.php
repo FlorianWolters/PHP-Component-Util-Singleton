@@ -16,7 +16,7 @@ return new Sami(
     __DIR__ . '/src/main/php',
     [
         'theme' => 'enhanced',
-        'title' => 'FlorianWolters\Component\Core\Singleton API',
+        'title' => 'FlorianWolters\Component\Util\Singleton API',
         'build_dir' => __DIR__ . '/review/api',
         'cache_dir' => __DIR__ . '/build/sami',
         'default_opened_level' => 2
